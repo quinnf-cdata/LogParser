@@ -26,7 +26,7 @@ import org.fxmisc.richtext.*;
 import org.fxmisc.flowless.*;
 
 
-public class HelloController {
+public class LogParserController {
     private LogFileController logFileController = new LogFileController();
     private TabMetadata tabMetadata = new TabMetadata();
 
@@ -37,7 +37,7 @@ public class HelloController {
     protected void onFileChooserButtonClick() {
         List<File> files = new ArrayList<>();
 
-        files.add(new FileChooser().showOpenDialog(HelloApplication.getStage()));
+        files.add(new FileChooser().showOpenDialog(LogParserApplication.getStage()));
 
         StringBuilder paths = new StringBuilder();
 
@@ -226,11 +226,11 @@ public class HelloController {
         CodeArea ca = new CodeArea(l.getContentsInRange(tabMetadata.getTabPageStart(tabIndex), tabMetadata.getTabPageEnd(tabIndex)));
 
         VirtualizedScrollPane vsp = new VirtualizedScrollPane(ca);
-        vsp.prefHeightProperty().bind(HelloApplication.getStage().heightProperty().multiply(0.80));
+        vsp.prefHeightProperty().bind(LogParserApplication.getStage().heightProperty().multiply(0.80));
 
         VBox v = new VBox(vsp,
                 new HBox(getLogNavButtonSet(tabIndex), getLogSearchButtonSet(tabIndex,ca,vsp)));
-        v.prefHeightProperty().bind(HelloApplication.getStage().heightProperty().multiply(0.80));
+        v.prefHeightProperty().bind(LogParserApplication.getStage().heightProperty().multiply(0.80));
 
         return v;
     }

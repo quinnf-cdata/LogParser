@@ -20,7 +20,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.CheckBox?>
 <VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.logparser.HelloController">
+      fx:controller="com.example.logparser.LogParserController">
 
     <HBox>
         <VBox alignment="TOP_LEFT" spacing="5.0">
