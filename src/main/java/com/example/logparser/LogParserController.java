@@ -42,7 +42,7 @@ public class LogParserController {
         StringBuilder paths = new StringBuilder();
 
         for (File file : files) {
-            paths.append(file.getPath() + ";");
+            paths.append(file.getPath()).append(";");
         }
 
         if (paths.isEmpty()) {

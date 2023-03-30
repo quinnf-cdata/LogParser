@@ -5,35 +5,28 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FileIndex {
-    private HashMap<Integer,String> fileIndex;
-    private List<Integer> keys;
-    private HashMap<Integer,Classification> classificationIndex;
+    private final HashMap<Integer,String> fileIndex;
+    private Map<Integer,List<Classification>> classificationIndex;
 
     public FileIndex() {
         fileIndex = new HashMap<>();
         classificationIndex = new HashMap<>();
-        keys = new ArrayList<>();
-    }
-
-    public HashMap<Integer,String> getFileIndex() {
-        return fileIndex;
     }
 
     public List<String[]> searchClassificationIndex(Classification criteria) {
         List<String[]> found = new ArrayList<>();
 
-        for (Map.Entry m:classificationIndex.entrySet()) {
-            if (m.getValue().toString().equalsIgnoreCase(criteria.toString())) {
-                found.add(new String[] {m.getKey().toString(),m.getValue().toString()});
+        for (Map.Entry<Integer,List<Classification>> entry : classificationIndex.entrySet()) {
+            List<Classification> values = entry.getValue();
+
+            for (Classification c : values) {
+                if (c.toString().equalsIgnoreCase(criteria.toString())) {
+                    found.add(new String[] {entry.getKey().toString(),entry.getValue().toString()});
+                }
             }
         }
 
-        Collections.sort(found, new Comparator<String[]>() {
-            @Override
-            public int compare(String[] o1, String[] o2) {
-                return o1[1].compareTo(o2[1]);
-            }
-        });
+        found.sort(Comparator.comparing(o -> o[1]));
 
         return found;
     }
@@ -41,11 +34,14 @@ public class FileIndex {
     public List<String[]> searchIndexByClassification(Classification classification) {
         List<String[]> found = new ArrayList<>();
 
-        for (Map.Entry m:classificationIndex.entrySet()) {
-            if (m.getValue().equals(classification)) {
-                String d = fileIndex.get(m.getKey());
-                if (!(d == null)) {
-                    found.add(new String[] {m.getKey().toString(),d});
+        for (Map.Entry<Integer,List<Classification>> entry : classificationIndex.entrySet()) {
+            List<Classification> c = entry.getValue();
+            for (Classification v : c) {
+                if (v.equals(classification)) {
+                    String d = fileIndex.get(entry.getKey());
+                    if (d != null) {
+                        found.add(new String[] {entry.getKey().toString(),d});
+                    }
                 }
             }
         }
@@ -65,9 +61,9 @@ public class FileIndex {
 
         criteria = criteria.toUpperCase();
 
-        for (Map.Entry m:fileIndex.entrySet()) {
-            if (m.getValue().toString().toUpperCase().contains(criteria)) {
-                found.add(new String[] {m.getKey().toString(),m.getValue().toString()});
+        for (Map.Entry<Integer,String> entry:fileIndex.entrySet()) {
+            if (entry.getValue().toUpperCase().contains(criteria)) {
+                found.add(new String[] {entry.getKey().toString(),entry.getValue()});
             }
         }
 
@@ -117,16 +113,29 @@ public class FileIndex {
         return false;
     }
 
-    public List<Integer> getKeys() { return keys; }
-    public Integer getKey(int index) { return keys.get(index); }
-
     public void addToIndex(String line, int lineNumber) {
         Classification classification = validateKeyword(line);
 
         if (classification != null) {
-            classificationIndex.put(Integer.valueOf(lineNumber),classification);
+            addToClassificationIndex(lineNumber,classification);
             recordWordAndLine(line,lineNumber);
         }
+    }
+
+    public HashMap<Integer, String> getFileIndex() {
+        return fileIndex;
+    }
+
+    public void addToClassificationIndex(Integer lineNumber,Classification classification) {
+        List<Classification> v = classificationIndex.get(lineNumber);
+
+        if (v == null) {
+            v = new ArrayList<>();
+        }
+
+        v.add(classification);
+
+        this.classificationIndex.put(lineNumber,v);
     }
 
     private String regexWildcard(String input) {
@@ -141,13 +150,13 @@ public class FileIndex {
 
         List<String> sortableList = new ArrayList<>();
 
-        for (Map.Entry m:classificationIndex.entrySet()) {
-            Classification cc = (Classification) m.getValue();
-
-            if (cc.equals(c)) {
-                String f = fileIndex.get(m.getKey());
-                if (!(f == null)) {
-                    sortableList.add(m.getKey() + "\t" + f +"\n");
+        for (Map.Entry<Integer,List<Classification>> m:classificationIndex.entrySet()) {
+            for (Classification cc : m.getValue()) {
+                if (cc.equals(c)) {
+                    String f = fileIndex.get(m.getKey());
+                    if (!(f == null)) {
+                        sortableList.add(m.getKey() + "\t" + f +"\n");
+                    }
                 }
             }
         }
@@ -159,13 +168,13 @@ public class FileIndex {
 
         List<String> sortableList = new ArrayList<>();
 
-        for (Map.Entry m:classificationIndex.entrySet()) {
-            Classification cc = (Classification) m.getValue();
-
-            if (cc.group == group) {
-                String f = fileIndex.get(m.getKey());
-                if (!(f == null)) {
-                    sortableList.add(m.getKey() + "\t" + f +"\n");
+        for (Map.Entry<Integer,List<Classification>> m:classificationIndex.entrySet()) {
+            for (Classification cc : m.getValue()) {
+                if (cc.group == group) {
+                    String f = fileIndex.get(m.getKey());
+                    if (f != null) {
+                        sortableList.add(m.getKey() + "\t" + f +"\n");
+                    }
                 }
             }
         }
@@ -192,7 +201,8 @@ public class FileIndex {
         return output.toString();
     }
 
-    public HashMap<Integer,Classification> getClassificationIndex() { return classificationIndex; }
+    public Map<Integer,List<Classification>> getClassificationIndex() { return classificationIndex; }
+    public List<Classification> getClassificationByLineNumber(int lineNumber) { return classificationIndex.get(lineNumber); }
 
 
 
@@ -232,7 +242,7 @@ public class FileIndex {
 
     public Classification toClassification(Object o) {
         for (Classification c : Classification.values()) {
-            if (o.toString() == c.toString()) {
+            if (o.toString().equalsIgnoreCase(c.toString())) {
                 return c;
             }
         }

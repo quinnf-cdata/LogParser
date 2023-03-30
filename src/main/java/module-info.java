@@ -9,7 +9,9 @@ module com.example.logparser {
     requires protobuf.java;
     requires protobuf.java.util;
     requires org.fxmisc.flowless;
+    requires org.junit.jupiter.api;
 
     opens com.example.logparser to javafx.fxml;
     exports com.example.logparser;
+    exports models;
 }
