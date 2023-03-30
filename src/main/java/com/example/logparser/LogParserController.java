@@ -35,21 +35,14 @@ public class LogParserController {
 
     @FXML
     protected void onFileChooserButtonClick() {
-        List<File> files = new ArrayList<>();
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(LogParserApplication.getStage());
 
-        files.add(new FileChooser().showOpenDialog(LogParserApplication.getStage()));
-
-        StringBuilder paths = new StringBuilder();
-
-        for (File file : files) {
-            paths.append(file.getPath()).append(";");
-        }
-
-        if (paths.isEmpty()) {
+        if (selectedFile != null) {
+            filePath.setText(selectedFile.getPath());
+        } else {
             filePath.setText("");
-            return;
         }
-        filePath.setText(paths.toString());
     }
 
     @FXML

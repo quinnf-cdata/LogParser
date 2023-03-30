@@ -16,7 +16,7 @@ public class LogParserApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         setStage(stage);
-        _stage.setTitle("Hello!");
+        _stage.setTitle("CData Log Parser");
         _stage.setScene(scene);
         _stage.show();
     }
