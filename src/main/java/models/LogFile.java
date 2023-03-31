@@ -7,22 +7,10 @@ public class LogFile extends FileIndex {
     private HashMap<Integer,String> data;
     private  String localPath;
     private  String friendlyName;
-    private FileIndex fileIndex;
     private boolean isLoading = false;
-    private String firstEntryDateTime;
-    private String lastEntryDateTime;
 
-    public LogFile() {}
-    public LogFile(  String localPath) {
-        this.localPath = localPath;
-        this.data = new HashMap<>();
-        fileIndex = new FileIndex();
-    }
-    public LogFile( String localPath, String friendlyName) {
-        this.localPath = localPath;
-        this.friendlyName = friendlyName;
-        this.data = new HashMap<>();
-        fileIndex = new FileIndex();
+    public LogFile() {
+        data = new HashMap<>();
     }
 
     public LogFile( String localPath, String friendlyName, HashMap<Integer,String> data) {
@@ -33,19 +21,11 @@ public class LogFile extends FileIndex {
         } else {
             this.data = data;
         }
-        fileIndex = new FileIndex();
     }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() { return id; }
-    public void setLogData(String data) { setLogData(data,data.length()+1);}
-    public void setLogData(String data, int lineNumber) { this.data.put(Integer.valueOf(lineNumber),data); }
+    public void setLogData(String data) { setLogData(data,this.data.size()+1);}
+    public void setLogData(String data, int lineNumber) { this.data.put(lineNumber,data); }
     public HashMap<Integer,String>  getLogData() { return data; }
-    public String getLogData(int index) { return data.get(Integer.valueOf(index)); }
+    public String getLogData(int key) { return data.get(key); }
 
     public void setLocalPath(String path) { localPath = path; }
     public String getLocalPath() { return localPath; }
@@ -73,10 +53,5 @@ public class LogFile extends FileIndex {
 
     public void setLoading(boolean loading) {
         isLoading = loading;
-    }
-
-    private void setFirstEntryDateTime() {
-        for (int i = 0; i < data.size(); i++) {
-        }
     }
 }
