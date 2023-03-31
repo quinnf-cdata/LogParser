@@ -1,4 +1,4 @@
-package com.example.tests;
+package tests;
 
 import models.FileIndex;
 import org.junit.jupiter.api.Test;

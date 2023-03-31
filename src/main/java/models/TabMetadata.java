@@ -1,29 +1,24 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TabMetadata {
-    private static List<TMetadata> metadataList;
+
+    private static Map<Integer,TMetadata> metadataList;
 
     public TabMetadata() {
-        metadataList = new ArrayList<>();
+        metadataList = new HashMap<>();
     }
 
-    public List<TMetadata> getMetadataList() {
-        return metadataList;
-    }
-
-    public void setMetadataList(List<TMetadata> metadataList) {
-        TabMetadata.metadataList = metadataList;
+    public int getMetadataListSize() {
+        return metadataList.size();
     }
 
     public void addTabMetadata(int id) {
-        metadataList.add(new TMetadata(id));
-    }
-
-    public boolean tabMetadataExists(int id) {
-        return metadataList.get(id) != null;
+        metadataList.put(id,new TMetadata(id));
     }
 
     public int getTabPageStart(int id) {
@@ -32,14 +27,6 @@ public class TabMetadata {
 
     public int getTabPageEnd(int id) {
         return metadataList.get(id).getPageEnd();
-    }
-
-    public void setTabPageStart(int id, int pageStart) {
-        metadataList.get(id).setPageStart(pageStart);
-    }
-
-    public void setTabPageEnd(int id, int pageEnd) {
-        metadataList.get(id).setPageEnd(pageEnd);
     }
 
     public void setTabCurrentPage(int id, int currentPage) {
@@ -52,10 +39,6 @@ public class TabMetadata {
 
     public int getTabPagesAvailable(int id) {
         return metadataList.get(id).getAvailablePages();
-    }
-
-    public void setTabPagesAvailable(int id, int availablePages) {
-        metadataList.get(id).setAvailablePages(availablePages);
     }
 
     public void calculateTabPagesAvailable(int id, int recordAmount) {
@@ -94,16 +77,8 @@ class TMetadata {
         return pageStart;
     }
 
-    public void setPageStart(int pageStart) {
-        this.pageStart = pageStart;
-    }
-
     public int getPageEnd() {
         return pageEnd;
-    }
-
-    public void setPageEnd(int pageEnd) {
-        this.pageEnd = pageEnd;
     }
 
     public int getCurrentPage() {
@@ -130,10 +105,6 @@ class TMetadata {
 
     public int getAvailablePages() {
         return availablePages;
-    }
-
-    public void setAvailablePages(int availablePages) {
-        this.availablePages = availablePages;
     }
 
     public void calculatePagesAvailable(int recordSize) {
