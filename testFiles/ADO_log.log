@@ -1,0 +1,468 @@
+﻿2023-02-10T16:35:54.399-05:00	2	[3|Q-Id]	[HTTP|Req: 0] POST http://localhost:8765
+2023-02-10T16:35:54.495-05:00	5	[3|Q-Id]	[HTTP|Req: 0] [New]
+[HTTP Headers]
+HTTP Auth Scheme: 0
+User: 
+Password: 
+POST / HTTP/1.1
+Host: localhost:8765
+Accept-Encoding: gzip, deflate
+User-Agent: CData Data Provider Engine - www.cdata.com - Accepts: gzip
+Content-Type: application/x-protobuf
+Content-Length: 187
+
+2023-02-10T16:35:54.633-05:00	5	[3|Q-Id]	[HTTP|Req: 0] 
+0A 3F 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 71 75 65 73 74 73 24 4F 70 65 6E 
+43 6F 6E 6E 65 63 74 69 6F 6E 52 65 71 75 65 73 
+74 12 78 0A 24 33 34 32 31 31 31 63 39 2D 33 65 
+33 38 2D 34 37 30 37 2D 39 33 37 31 2D 37 66 39 
+64 61 33 31 32 35 31 30 37 12 28 0A 18 70 68 6F 
+65 6E 69 78 2E 71 75 65 72 79 2E 74 69 6D 65 46 
+6F 72 6D 61 74 12 0C 48 48 3A 6D 6D 3A 73 73 2E 
+53 53 53 12 26 0A 18 70 68 6F 65 6E 69 78 2E 71 
+75 65 72 79 2E 64 61 74 65 46 6F 72 6D 61 74 12 
+0A 79 79 79 79 2D 4D 4D 2D 64 64 
+2023-02-10T16:35:54.736-05:00	5	[3|Q-Id]	[HTTP|Res: 0]
+[HTTP Headers]
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2023 21:35:54 GMT
+Content-Type: application/octet-stream;charset=utf-8
+Content-Length: 90
+Server: Jetty(9.3.z-SNAPSHOT)
+2023-02-10T16:35:54.837-05:00	5	[3|Q-Id]	[HTTP|Res: 0] 
+0A 41 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 73 70 6F 6E 73 65 73 24 4F 70 65 
+6E 43 6F 6E 6E 65 63 74 69 6F 6E 52 65 73 70 6F 
+6E 73 65 12 15 0A 13 0A 11 30 62 61 33 32 30 63 
+66 38 31 64 38 3A 38 37 36 35 
+2023-02-10T16:35:54.838-05:00	2	[3|Q-Id]	[HTTP|Res: 0] HTTP/1.1 200 OK, 90 Bytes Transferred
+2023-02-10T16:35:54.896-05:00	2	[3|Q-Id]	[HTTP|Res: 0] Request completed in 792 ms.
+2023-02-10T16:35:55.025-05:00	2	[3|Q-Id]	[HTTP|Req: 1] POST http://localhost:8765
+2023-02-10T16:35:55.028-05:00	5	[3|Q-Id]	[HTTP|Req: 1] [Reused]
+[HTTP Headers]
+HTTP Auth Scheme: 0
+User: 
+Password: 
+POST / HTTP/1.1
+Host: localhost:8765
+Accept-Encoding: gzip, deflate
+User-Agent: CData Data Provider Engine - www.cdata.com - Accepts: gzip
+Content-Type: application/x-protobuf
+Content-Length: 111
+
+2023-02-10T16:35:55.098-05:00	5	[3|Q-Id]	[HTTP|Req: 1] 
+0A 3F 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 71 75 65 73 74 73 24 43 6F 6E 6E 
+65 63 74 69 6F 6E 53 79 6E 63 52 65 71 75 65 73 
+74 12 2C 0A 24 33 34 32 31 31 31 63 39 2D 33 65 
+33 38 2D 34 37 30 37 2D 39 33 37 31 2D 37 66 39 
+64 61 33 31 32 35 31 30 37 12 04 10 01 38 01 
+2023-02-10T16:35:55.130-05:00	5	[3|Q-Id]	[HTTP|Res: 1]
+[HTTP Headers]
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2023 21:35:55 GMT
+Content-Type: application/octet-stream;charset=utf-8
+Content-Length: 100
+Server: Jetty(9.3.z-SNAPSHOT)
+2023-02-10T16:35:55.161-05:00	5	[3|Q-Id]	[HTTP|Res: 1] 
+0A 41 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 73 70 6F 6E 73 65 73 24 43 6F 6E 
+6E 65 63 74 69 6F 6E 53 79 6E 63 52 65 73 70 6F 
+6E 73 65 12 1F 0A 08 10 01 20 04 38 01 40 01 12 
+13 0A 11 30 62 61 33 32 30 63 66 38 31 64 38 3A 
+38 37 36 35 
+2023-02-10T16:35:55.193-05:00	2	[3|Q-Id]	[HTTP|Res: 1] HTTP/1.1 200 OK, 100 Bytes Transferred
+2023-02-10T16:35:55.193-05:00	2	[3|Q-Id]	[HTTP|Res: 1] Request completed in 169 ms.
+2023-02-10T16:35:55.246-05:00	4	[3|Q-Id]	[INFO|Connec] Executed connect: Success: (1290 ms)
+2023-02-10T16:35:55.355-05:00	1	[3|Q-Id]	[INFO|Connec] Opened ApachePhoenix connection. Version: 22.0.8438.0. Edition: [ADO.NET Provider .NET 4.0].
+2023-02-10T16:35:55.458-05:00	1	[3|Q-Id]	[INFO|Connec] Connection String: authscheme=Basic;batchsize=0;browsableschemas='';catalog=CData;clustername='';connectionlifetime=0;enableschemas=False;firewallpassword=*****;firewallport=0;firewallserver='';firewalltype=NONE;firewalluser='';impersonationuser='';kerberoskdc='';kerberoskeytabfile='';kerberosrealm='';kerberosservicekdc='';kerberosservicerealm='';kerberosspn='';kerberosticketcache='';location="C:\Users\QuinnFreas\AppData\Roaming\CData\ApachePhoenix Data Provider\Schema";logfile=C:\Users\QuinnFreas/Logs/ADO_log.log;logmodules='';maxlogfilecount=-1;maxlogfilesize=100MB;maxrows=-1;other='';pagesize=1000;poolidletimeout=60;poolmaxsize=100;poolminsize=1;poolwaittime=60;port=8765;proxyauthscheme=BASIC;proxyautodetect=True;proxyexceptions='';proxypassword=*****;proxyport=80;proxyserver='';proxyssltype=AUTO;proxyuser='';querypassthrough=false;readonly=False;schema='';server=localhost;serverconfigurations='';sslclientcert=*****;sslclientcertpassword=*****;sslclientcertsubject=*;sslclientcerttype=USER;sslservercert='';tables='';timeout=60;url='';useconnectionpooling=False;verbosity=5;version=4.9.0;views=''
+2023-02-10T16:35:57.545-05:00	2	[3|Q-Id]	[EXEC|Parsed] Executing query: [UPSERT INTO cdata.testTable (id,description,stringArray) VALUES (3,'DOTNET Array',@names)]
+2023-02-10T16:35:57.548-05:00	2	[3|Q-Id]	[EXEC|Parsed] Parameter: names = ARRAY["Mary","Jane"]
+2023-02-10T16:35:57.765-05:00	5	[ |Q-Id]	[META|Schema] Engine Invalid object name 'testTable'
+2023-02-10T16:35:57.825-05:00	2	[3|Q-Id]	[HTTP|Req: 2] POST http://localhost:8765
+2023-02-10T16:35:57.825-05:00	5	[3|Q-Id]	[HTTP|Req: 2] [Reused]
+[HTTP Headers]
+HTTP Auth Scheme: 0
+User: 
+Password: 
+POST / HTTP/1.1
+Host: localhost:8765
+Accept-Encoding: gzip, deflate
+User-Agent: CData Data Provider Engine - www.cdata.com - Accepts: gzip
+Content-Type: application/x-protobuf
+Content-Length: 106
+
+2023-02-10T16:35:57.825-05:00	5	[3|Q-Id]	[HTTP|Req: 2] 
+0A 40 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 71 75 65 73 74 73 24 43 72 65 61 
+74 65 53 74 61 74 65 6D 65 6E 74 52 65 71 75 65 
+73 74 12 26 0A 24 33 34 32 31 31 31 63 39 2D 33 
+65 33 38 2D 34 37 30 37 2D 39 33 37 31 2D 37 66 
+39 64 61 33 31 32 35 31 30 37 
+2023-02-10T16:35:57.828-05:00	5	[3|Q-Id]	[HTTP|Res: 2]
+[HTTP Headers]
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2023 21:35:57 GMT
+Content-Type: application/octet-stream;charset=utf-8
+Content-Length: 131
+Server: Jetty(9.3.z-SNAPSHOT)
+2023-02-10T16:35:57.828-05:00	5	[3|Q-Id]	[HTTP|Res: 2] 
+0A 42 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 73 70 6F 6E 73 65 73 24 43 72 65 
+61 74 65 53 74 61 74 65 6D 65 6E 74 52 65 73 70 
+6F 6E 73 65 12 3D 0A 24 33 34 32 31 31 31 63 39 
+2D 33 65 33 38 2D 34 37 30 37 2D 39 33 37 31 2D 
+37 66 39 64 61 33 31 32 35 31 30 37 10 4C 1A 13 
+0A 11 30 62 61 33 32 30 63 66 38 31 64 38 3A 38 
+37 36 35 
+2023-02-10T16:35:57.828-05:00	2	[3|Q-Id]	[HTTP|Res: 2] HTTP/1.1 200 OK, 131 Bytes Transferred
+2023-02-10T16:35:57.828-05:00	2	[3|Q-Id]	[HTTP|Res: 2] Request completed in 4 ms.
+2023-02-10T16:35:57.831-05:00	2	[3|Q-Id]	[HTTP|Req: 3] POST http://localhost:8765
+2023-02-10T16:35:57.831-05:00	5	[3|Q-Id]	[HTTP|Req: 3] [Reused]
+[HTTP Headers]
+HTTP Auth Scheme: 0
+User: 
+Password: 
+POST / HTTP/1.1
+Host: localhost:8765
+Accept-Encoding: gzip, deflate
+User-Agent: CData Data Provider Engine - www.cdata.com - Accepts: gzip
+Content-Type: application/x-protobuf
+Content-Length: 225
+
+2023-02-10T16:35:57.831-05:00	5	[3|Q-Id]	[HTTP|Req: 3] 
+0A 42 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 71 75 65 73 74 73 24 50 72 65 70 
+61 72 65 41 6E 64 45 78 65 63 75 74 65 52 65 71 
+75 65 73 74 12 9A 01 0A 24 33 34 32 31 31 31 63 
+39 2D 33 65 33 38 2D 34 37 30 37 2D 39 33 37 31 
+2D 37 66 39 64 61 33 31 32 35 31 30 37 12 6D 55 
+50 53 45 52 54 20 49 4E 54 4F 20 63 64 61 74 61 
+2E 74 65 73 74 54 61 62 6C 65 20 28 69 64 2C 20 
+64 65 73 63 72 69 70 74 69 6F 6E 2C 20 73 74 72 
+69 6E 67 41 72 72 61 79 29 20 56 41 4C 55 45 53 
+20 28 33 2C 20 27 44 4F 54 4E 45 54 20 41 72 72 
+61 79 27 2C 20 27 41 52 52 41 59 5B 22 4D 61 72 
+79 22 2C 22 4A 61 6E 65 22 5D 27 29 20 4C 30 E8 
+07 
+2023-02-10T16:35:57.837-05:00	5	[3|Q-Id]	[HTTP|Res: 3]
+[HTTP Headers]
+HTTP/1.1 500 Server Error
+Date: Fri, 10 Feb 2023 21:35:57 GMT
+Content-Type: application/octet-stream;charset=utf-8
+Content-Length: 3912
+Server: Jetty(9.3.z-SNAPSHOT)
+2023-02-10T16:35:58.024-05:00	5	[3|Q-Id]	[HTTP|Res: 3] 
+0A 38 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 
+63 69 74 65 2E 61 76 61 74 69 63 61 2E 70 72 6F 
+74 6F 2E 52 65 73 70 6F 6E 73 65 73 24 45 72 72 
+6F 72 52 65 73 70 6F 6E 73 65 12 8B 1E 0A B0 1D 
+6A 61 76 61 2E 6C 61 6E 67 2E 49 6C 6C 65 67 61 
+6C 41 72 67 75 6D 65 6E 74 45 78 63 65 70 74 69 
+6F 6E 3A 20 4E 6F 74 20 61 20 70 68 6F 65 6E 69 
+78 20 61 72 72 61 79 20 74 79 70 65 0A 09 61 74 
+20 63 6F 6D 2E 67 6F 6F 67 6C 65 2E 63 6F 6D 6D 
+6F 6E 2E 62 61 73 65 2E 50 72 65 63 6F 6E 64 69 
+74 69 6F 6E 73 2E 63 68 65 63 6B 41 72 67 75 6D 
+65 6E 74 28 50 72 65 63 6F 6E 64 69 74 69 6F 6E 
+73 2E 6A 61 76 61 3A 39 32 29 0A 09 61 74 20 6F 
+72 67 2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 
+78 2E 73 63 68 65 6D 61 2E 74 79 70 65 73 2E 50 
+44 61 74 61 54 79 70 65 2E 61 72 72 61 79 42 61 
+73 65 54 79 70 65 28 50 44 61 74 61 54 79 70 65 
+2E 6A 61 76 61 3A 31 31 39 37 29 0A 09 61 74 20 
+6F 72 67 2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 
+69 78 2E 73 63 68 65 6D 61 2E 74 79 70 65 73 2E 
+50 41 72 72 61 79 44 61 74 61 54 79 70 65 2E 74 
+6F 4F 62 6A 65 63 74 28 50 41 72 72 61 79 44 61 
+74 61 54 79 70 65 2E 6A 61 76 61 3A 34 31 33 29 
+0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 
+70 68 6F 65 6E 69 78 2E 65 78 70 72 65 73 73 69 
+6F 6E 2E 4C 69 74 65 72 61 6C 45 78 70 72 65 73 
+73 69 6F 6E 2E 6E 65 77 43 6F 6E 73 74 61 6E 74 
+28 4C 69 74 65 72 61 6C 45 78 70 72 65 73 73 69 
+6F 6E 2E 6A 61 76 61 3A 31 38 38 29 0A 09 61 74 
+20 6F 72 67 2E 61 70 61 63 68 65 2E 70 68 6F 65 
+6E 69 78 2E 65 78 70 72 65 73 73 69 6F 6E 2E 4C 
+69 74 65 72 61 6C 45 78 70 72 65 73 73 69 6F 6E 
+2E 6E 65 77 43 6F 6E 73 74 61 6E 74 28 4C 69 74 
+65 72 61 6C 45 78 70 72 65 73 73 69 6F 6E 2E 6A 
+61 76 61 3A 31 37 34 29 0A 09 61 74 20 6F 72 67 
+2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 
+65 78 70 72 65 73 73 69 6F 6E 2E 4C 69 74 65 72 
+61 6C 45 78 70 72 65 73 73 69 6F 6E 2E 6E 65 77 
+43 6F 6E 73 74 61 6E 74 28 4C 69 74 65 72 61 6C 
+45 78 70 72 65 73 73 69 6F 6E 2E 6A 61 76 61 3A 
+31 36 31 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 
+63 68 65 2E 70 68 6F 65 6E 69 78 2E 63 6F 6D 70 
+69 6C 65 2E 55 70 73 65 72 74 43 6F 6D 70 69 6C 
+65 72 24 55 70 64 61 74 65 43 6F 6C 75 6D 6E 43 
+6F 6D 70 69 6C 65 72 2E 76 69 73 69 74 28 55 70 
+73 65 72 74 43 6F 6D 70 69 6C 65 72 2E 6A 61 76 
+61 3A 38 37 39 29 0A 09 61 74 20 6F 72 67 2E 61 
+70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 63 6F 
+6D 70 69 6C 65 2E 55 70 73 65 72 74 43 6F 6D 70 
+69 6C 65 72 24 55 70 64 61 74 65 43 6F 6C 75 6D 
+6E 43 6F 6D 70 69 6C 65 72 2E 76 69 73 69 74 28 
+55 70 73 65 72 74 43 6F 6D 70 69 6C 65 72 2E 6A 
+61 76 61 3A 38 35 35 29 0A 09 61 74 20 6F 72 67 
+2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 
+70 61 72 73 65 2E 4C 69 74 65 72 61 6C 50 61 72 
+73 65 4E 6F 64 65 2E 61 63 63 65 70 74 28 4C 69 
+74 65 72 61 6C 50 61 72 73 65 4E 6F 64 65 2E 6A 
+61 76 61 3A 38 30 29 0A 09 61 74 20 6F 72 67 2E 
+61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 63 
+6F 6D 70 69 6C 65 2E 55 70 73 65 72 74 43 6F 6D 
+70 69 6C 65 72 2E 63 6F 6D 70 69 6C 65 28 55 70 
+73 65 72 74 43 6F 6D 70 69 6C 65 72 2E 6A 61 76 
+61 3A 37 34 34 29 0A 09 61 74 20 6F 72 67 2E 61 
+70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 6A 64 
+62 63 2E 50 68 6F 65 6E 69 78 53 74 61 74 65 6D 
+65 6E 74 24 45 78 65 63 75 74 61 62 6C 65 55 70 
+73 65 72 74 53 74 61 74 65 6D 65 6E 74 2E 63 6F 
+6D 70 69 6C 65 50 6C 61 6E 28 50 68 6F 65 6E 69 
+78 53 74 61 74 65 6D 65 6E 74 2E 6A 61 76 61 3A 
+37 38 34 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 
+63 68 65 2E 70 68 6F 65 6E 69 78 2E 6A 64 62 63 
+2E 50 68 6F 65 6E 69 78 53 74 61 74 65 6D 65 6E 
+74 24 45 78 65 63 75 74 61 62 6C 65 55 70 73 65 
+72 74 53 74 61 74 65 6D 65 6E 74 2E 63 6F 6D 70 
+69 6C 65 50 6C 61 6E 28 50 68 6F 65 6E 69 78 53 
+74 61 74 65 6D 65 6E 74 2E 6A 61 76 61 3A 37 37 
+30 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 
+65 2E 70 68 6F 65 6E 69 78 2E 6A 64 62 63 2E 50 
+68 6F 65 6E 69 78 53 74 61 74 65 6D 65 6E 74 24 
+32 2E 63 61 6C 6C 28 50 68 6F 65 6E 69 78 53 74 
+61 74 65 6D 65 6E 74 2E 6A 61 76 61 3A 34 30 31 
+29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 
+2E 70 68 6F 65 6E 69 78 2E 6A 64 62 63 2E 50 68 
+6F 65 6E 69 78 53 74 61 74 65 6D 65 6E 74 24 32 
+2E 63 61 6C 6C 28 50 68 6F 65 6E 69 78 53 74 61 
+74 65 6D 65 6E 74 2E 6A 61 76 61 3A 33 39 31 29 
+0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 
+70 68 6F 65 6E 69 78 2E 63 61 6C 6C 2E 43 61 6C 
+6C 52 75 6E 6E 65 72 2E 72 75 6E 28 43 61 6C 6C 
+52 75 6E 6E 65 72 2E 6A 61 76 61 3A 35 33 29 0A 
+09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 70 
+68 6F 65 6E 69 78 2E 6A 64 62 63 2E 50 68 6F 65 
+6E 69 78 53 74 61 74 65 6D 65 6E 74 2E 65 78 65 
+63 75 74 65 4D 75 74 61 74 69 6F 6E 28 50 68 6F 
+65 6E 69 78 53 74 61 74 65 6D 65 6E 74 2E 6A 61 
+76 61 3A 33 39 30 29 0A 09 61 74 20 6F 72 67 2E 
+61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 6A 
+64 62 63 2E 50 68 6F 65 6E 69 78 53 74 61 74 65 
+6D 65 6E 74 2E 65 78 65 63 75 74 65 4D 75 74 61 
+74 69 6F 6E 28 50 68 6F 65 6E 69 78 53 74 61 74 
+65 6D 65 6E 74 2E 6A 61 76 61 3A 33 37 38 29 0A 
+09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 70 
+68 6F 65 6E 69 78 2E 6A 64 62 63 2E 50 68 6F 65 
+6E 69 78 53 74 61 74 65 6D 65 6E 74 2E 65 78 65 
+63 75 74 65 28 50 68 6F 65 6E 69 78 53 74 61 74 
+65 6D 65 6E 74 2E 6A 61 76 61 3A 31 38 32 35 29 
+0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 
+63 61 6C 63 69 74 65 2E 61 76 61 74 69 63 61 2E 
+6A 64 62 63 2E 4A 64 62 63 4D 65 74 61 2E 70 72 
+65 70 61 72 65 41 6E 64 45 78 65 63 75 74 65 28 
+4A 64 62 63 4D 65 74 61 2E 6A 61 76 61 3A 37 34 
+37 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 
+65 2E 63 61 6C 63 69 74 65 2E 61 76 61 74 69 63 
+61 2E 72 65 6D 6F 74 65 2E 4C 6F 63 61 6C 53 65 
+72 76 69 63 65 2E 61 70 70 6C 79 28 4C 6F 63 61 
+6C 53 65 72 76 69 63 65 2E 6A 61 76 61 3A 32 30 
+36 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 
+65 2E 63 61 6C 63 69 74 65 2E 61 76 61 74 69 63 
+61 2E 72 65 6D 6F 74 65 2E 53 65 72 76 69 63 65 
+24 50 72 65 70 61 72 65 41 6E 64 45 78 65 63 75 
+74 65 52 65 71 75 65 73 74 2E 61 63 63 65 70 74 
+28 53 65 72 76 69 63 65 2E 6A 61 76 61 3A 39 32 
+37 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 
+65 2E 63 61 6C 63 69 74 65 2E 61 76 61 74 69 63 
+61 2E 72 65 6D 6F 74 65 2E 53 65 72 76 69 63 65 
+24 50 72 65 70 61 72 65 41 6E 64 45 78 65 63 75 
+74 65 52 65 71 75 65 73 74 2E 61 63 63 65 70 74 
+28 53 65 72 76 69 63 65 2E 6A 61 76 61 3A 38 37 
+39 29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 
+65 2E 63 61 6C 63 69 74 65 2E 61 76 61 74 69 63 
+61 2E 72 65 6D 6F 74 65 2E 41 62 73 74 72 61 63 
+74 48 61 6E 64 6C 65 72 2E 61 70 70 6C 79 28 41 
+62 73 74 72 61 63 74 48 61 6E 64 6C 65 72 2E 6A 
+61 76 61 3A 39 34 29 0A 09 61 74 20 6F 72 67 2E 
+61 70 61 63 68 65 2E 63 61 6C 63 69 74 65 2E 61 
+76 61 74 69 63 61 2E 72 65 6D 6F 74 65 2E 50 72 
+6F 74 6F 62 75 66 48 61 6E 64 6C 65 72 2E 61 70 
+70 6C 79 28 50 72 6F 74 6F 62 75 66 48 61 6E 64 
+6C 65 72 2E 6A 61 76 61 3A 34 36 29 0A 09 61 74 
+20 6F 72 67 2E 61 70 61 63 68 65 2E 63 61 6C 63 
+69 74 65 2E 61 76 61 74 69 63 61 2E 73 65 72 76 
+65 72 2E 41 76 61 74 69 63 61 50 72 6F 74 6F 62 
+75 66 48 61 6E 64 6C 65 72 2E 68 61 6E 64 6C 65 
+28 41 76 61 74 69 63 61 50 72 6F 74 6F 62 75 66 
+48 61 6E 64 6C 65 72 2E 6A 61 76 61 3A 31 32 37 
+29 0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 
+2E 70 68 6F 65 6E 69 78 2E 73 68 61 64 65 64 2E 
+6F 72 67 2E 65 63 6C 69 70 73 65 2E 6A 65 74 74 
+79 2E 73 65 72 76 65 72 2E 68 61 6E 64 6C 65 72 
+2E 48 61 6E 64 6C 65 72 4C 69 73 74 2E 68 61 6E 
+64 6C 65 28 48 61 6E 64 6C 65 72 4C 69 73 74 2E 
+6A 61 76 61 3A 35 32 29 0A 09 61 74 20 6F 72 67 
+2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 
+73 68 61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 70 
+73 65 2E 6A 65 74 74 79 2E 73 65 72 76 65 72 2E 
+68 61 6E 64 6C 65 72 2E 48 61 6E 64 6C 65 72 57 
+72 61 70 70 65 72 2E 68 61 6E 64 6C 65 28 48 61 
+6E 64 6C 65 72 57 72 61 70 70 65 72 2E 6A 61 76 
+61 3A 31 33 34 29 0A 09 61 74 20 6F 72 67 2E 61 
+70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 73 68 
+61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 70 73 65 
+2E 6A 65 74 74 79 2E 73 65 72 76 65 72 2E 53 65 
+72 76 65 72 2E 68 61 6E 64 6C 65 28 53 65 72 76 
+65 72 2E 6A 61 76 61 3A 35 33 34 29 0A 09 61 74 
+20 6F 72 67 2E 61 70 61 63 68 65 2E 70 68 6F 65 
+6E 69 78 2E 73 68 61 64 65 64 2E 6F 72 67 2E 65 
+63 6C 69 70 73 65 2E 6A 65 74 74 79 2E 73 65 72 
+76 65 72 2E 48 74 74 70 43 68 61 6E 6E 65 6C 2E 
+68 61 6E 64 6C 65 28 48 74 74 70 43 68 61 6E 6E 
+65 6C 2E 6A 61 76 61 3A 33 32 30 29 0A 09 61 74 
+20 6F 72 67 2E 61 70 61 63 68 65 2E 70 68 6F 65 
+6E 69 78 2E 73 68 61 64 65 64 2E 6F 72 67 2E 65 
+63 6C 69 70 73 65 2E 6A 65 74 74 79 2E 73 65 72 
+76 65 72 2E 48 74 74 70 43 6F 6E 6E 65 63 74 69 
+6F 6E 2E 6F 6E 46 69 6C 6C 61 62 6C 65 28 48 74 
+74 70 43 6F 6E 6E 65 63 74 69 6F 6E 2E 6A 61 76 
+61 3A 32 35 31 29 0A 09 61 74 20 6F 72 67 2E 61 
+70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 73 68 
+61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 70 73 65 
+2E 6A 65 74 74 79 2E 69 6F 2E 41 62 73 74 72 61 
+63 74 43 6F 6E 6E 65 63 74 69 6F 6E 24 52 65 61 
+64 43 61 6C 6C 62 61 63 6B 2E 73 75 63 63 65 65 
+64 65 64 28 41 62 73 74 72 61 63 74 43 6F 6E 6E 
+65 63 74 69 6F 6E 2E 6A 61 76 61 3A 32 38 33 29 
+0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 
+70 68 6F 65 6E 69 78 2E 73 68 61 64 65 64 2E 6F 
+72 67 2E 65 63 6C 69 70 73 65 2E 6A 65 74 74 79 
+2E 69 6F 2E 46 69 6C 6C 49 6E 74 65 72 65 73 74 
+2E 66 69 6C 6C 61 62 6C 65 28 46 69 6C 6C 49 6E 
+74 65 72 65 73 74 2E 6A 61 76 61 3A 31 30 38 29 
+0A 09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 
+70 68 6F 65 6E 69 78 2E 73 68 61 64 65 64 2E 6F 
+72 67 2E 65 63 6C 69 70 73 65 2E 6A 65 74 74 79 
+2E 69 6F 2E 53 65 6C 65 63 74 43 68 61 6E 6E 65 
+6C 45 6E 64 50 6F 69 6E 74 24 32 2E 72 75 6E 28 
+53 65 6C 65 63 74 43 68 61 6E 6E 65 6C 45 6E 64 
+50 6F 69 6E 74 2E 6A 61 76 61 3A 39 33 29 0A 09 
+61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 70 68 
+6F 65 6E 69 78 2E 73 68 61 64 65 64 2E 6F 72 67 
+2E 65 63 6C 69 70 73 65 2E 6A 65 74 74 79 2E 75 
+74 69 6C 2E 74 68 72 65 61 64 2E 73 74 72 61 74 
+65 67 79 2E 45 78 65 63 75 74 65 50 72 6F 64 75 
+63 65 43 6F 6E 73 75 6D 65 2E 65 78 65 63 75 74 
+65 50 72 6F 64 75 63 65 43 6F 6E 73 75 6D 65 28 
+45 78 65 63 75 74 65 50 72 6F 64 75 63 65 43 6F 
+6E 73 75 6D 65 2E 6A 61 76 61 3A 33 30 33 29 0A 
+09 61 74 20 6F 72 67 2E 61 70 61 63 68 65 2E 70 
+68 6F 65 6E 69 78 2E 73 68 61 64 65 64 2E 6F 72 
+67 2E 65 63 6C 69 70 73 65 2E 6A 65 74 74 79 2E 
+75 74 69 6C 2E 74 68 72 65 61 64 2E 73 74 72 61 
+74 65 67 79 2E 45 78 65 63 75 74 65 50 72 6F 64 
+75 63 65 43 6F 6E 73 75 6D 65 2E 70 72 6F 64 75 
+63 65 43 6F 6E 73 75 6D 65 28 45 78 65 63 75 74 
+65 50 72 6F 64 75 63 65 43 6F 6E 73 75 6D 65 2E 
+6A 61 76 61 3A 31 34 38 29 0A 09 61 74 20 6F 72 
+67 2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 
+2E 73 68 61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 
+70 73 65 2E 6A 65 74 74 79 2E 75 74 69 6C 2E 74 
+68 72 65 61 64 2E 73 74 72 61 74 65 67 79 2E 45 
+78 65 63 75 74 65 50 72 6F 64 75 63 65 43 6F 6E 
+73 75 6D 65 2E 72 75 6E 28 45 78 65 63 75 74 65 
+50 72 6F 64 75 63 65 43 6F 6E 73 75 6D 65 2E 6A 
+61 76 61 3A 31 33 36 29 0A 09 61 74 20 6F 72 67 
+2E 61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 
+73 68 61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 70 
+73 65 2E 6A 65 74 74 79 2E 75 74 69 6C 2E 74 68 
+72 65 61 64 2E 51 75 65 75 65 64 54 68 72 65 61 
+64 50 6F 6F 6C 2E 72 75 6E 4A 6F 62 28 51 75 65 
+75 65 64 54 68 72 65 61 64 50 6F 6F 6C 2E 6A 61 
+76 61 3A 36 37 31 29 0A 09 61 74 20 6F 72 67 2E 
+61 70 61 63 68 65 2E 70 68 6F 65 6E 69 78 2E 73 
+68 61 64 65 64 2E 6F 72 67 2E 65 63 6C 69 70 73 
+65 2E 6A 65 74 74 79 2E 75 74 69 6C 2E 74 68 72 
+65 61 64 2E 51 75 65 75 65 64 54 68 72 65 61 64 
+50 6F 6F 6C 24 32 2E 72 75 6E 28 51 75 65 75 65 
+64 54 68 72 65 61 64 50 6F 6F 6C 2E 6A 61 76 61 
+3A 35 38 39 29 0A 09 61 74 20 6A 61 76 61 2E 6C 
+61 6E 67 2E 54 68 72 65 61 64 2E 72 75 6E 28 54 
+68 72 65 61 64 2E 6A 61 76 61 3A 37 34 38 29 0A 
+12 32 49 6C 6C 65 67 61 6C 41 72 67 75 6D 65 6E 
+74 45 78 63 65 70 74 69 6F 6E 3A 20 4E 6F 74 20 
+61 20 70 68 6F 65 6E 69 78 20 61 72 72 61 79 20 
+74 79 70 65 20 FF FF FF FF 0F 2A 05 30 30 30 30 
+30 32 13 0A 11 30 62 61 33 32 30 63 66 38 31 64 
+38 3A 38 37 36 35 38 01 
+2023-02-10T16:35:58.024-05:00	2	[3|Q-Id]	[HTTP|Res: 3] HTTP/1.1 500 Server Error, 3912 Bytes Transferred
+2023-02-10T16:35:58.047-05:00	2	 Error: HTTP protocol error. 500 Server Error. Stack:    at nsoftware.IPWorksCData.EHTTP.Post(String URL)
+   at RSSBus.core.EHttpRequest.InternalExecuteHttp(String method)
+2023-02-10T16:35:58.124-05:00	1	[3|Q-Id]	[MDUL|SbMDUL] java.lang.IllegalArgumentException: Not a phoenix array type
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:92)
+	at org.apache.phoenix.schema.types.PDataType.arrayBaseType(PDataType.java:1197)
+	at org.apache.phoenix.schema.types.PArrayDataType.toObject(PArrayDataType.java:413)
+	at org.apache.phoenix.expression.LiteralExpression.newConstant(LiteralExpression.java:188)
+	at org.apache.phoenix.expression.LiteralExpression.newConstant(LiteralExpression.java:174)
+	at org.apache.phoenix.expression.LiteralExpression.newConstant(LiteralExpression.java:161)
+	at org.apache.phoenix.compile.UpsertCompiler$UpdateColumnCompiler.visit(UpsertCompiler.java:879)
+	at org.apache.phoenix.compile.UpsertCompiler$UpdateColumnCompiler.visit(UpsertCompiler.java:855)
+	at org.apache.phoenix.parse.LiteralParseNode.accept(LiteralParseNode.java:80)
+	at org.apache.phoenix.compile.UpsertCompiler.compile(UpsertCompiler.java:744)
+	at org.apache.phoenix.jdbc.PhoenixStatement$ExecutableUpsertStatement.compilePlan(PhoenixStatement.java:784)
+	at org.apache.phoenix.jdbc.PhoenixStatement$ExecutableUpsertStatement.compilePlan(PhoenixStatement.java:770)
+	at org.apache.phoenix.jdbc.PhoenixStatement$2.call(PhoenixStatement.java:401)
+	at org.apache.phoenix.jdbc.PhoenixStatement$2.call(PhoenixStatement.java:391)
+	at org.apache.phoenix.call.CallRunner.run(CallRunner.java:53)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeMutation(PhoenixStatement.java:390)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeMutation(PhoenixStatement.java:378)
+	at org.apache.phoenix.jdbc.PhoenixStatement.execute(PhoenixStatement.java:1825)
+	at org.apache.calcite.avatica.jdbc.JdbcMeta.prepareAndExecute(JdbcMeta.java:747)
+	at org.apache.calcite.avatica.remote.LocalService.apply(LocalService.java:206)
+	at org.apache.calcite.avatica.remote.Service$PrepareAndExecuteRequest.accept(Service.java:927)
+	at org.apache.calcite.avatica.remote.Service$PrepareAndExecuteRequest.accept(Service.java:879)
+	at org.apache.calcite.avatica.remote.AbstractHandler.apply(AbstractHandler.java:94)
+	at org.apache.calcite.avatica.remote.ProtobufHandler.apply(ProtobufHandler.java:46)
+	at org.apache.calcite.avatica.server.AvaticaProtobufHandler.handle(AvaticaProtobufHandler.java:127)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.server.Server.handle(Server.java:534)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:283)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:108)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.apache.phoenix.shaded.org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+2023-02-10T16:35:58.254-05:00	0	[3|Q-Id]	[SQL |Messag] Query Failed: [UPSERT INTO cdata.testTable (id,description,stringArray) VALUES (3,'DOTNET Array',@names)]. Error: IllegalArgumentException: Not a phoenix array type
+2023-02-10T16:35:58.263-05:00	0	IllegalArgumentException: Not a phoenix array type
+CData.Exceptions.ServerException
+   at RSSBus.ApachephoenixadoOps.APUtilities.ThrowParsedException(APOptions options, ErrorResponseWrapper errorResponseWrapper)
+   at RSSBus.ApachephoenixadoOps.APExecuteRequest.Execute(APOptions options)
+   at RSSBus.ApachephoenixadoOps.APUtilities.SendRequest(APOptions options, IMessage generatedMessage, Boolean stream)
+   at RSSBus.ApachephoenixadoOps.APUtilities.ExecuteRequest(APOptions options, IMessage generatedMessage, Boolean stream)
+   at RSSBus.ApachephoenixadoOps.APUtilities.PrepareAndExecuteRequest(APOptions options, String sql, Int32 statementId)
+   at RSSBus.ApachephoenixadoOps.APDataAccess.ExecuteQuery(IDataStatement stmt, QueryParameterCollection commandParameters, Int32 behavior)
+   at RSSBus.core.RSBInfoContext.ExecuteQuery(IDataStatement statement, QueryParameterCollection commandParameters, Int32 behavior)
+   at CData.Sql.ProxyIDataAccess.ExecuteQuery(IDataStatement statement, QueryParameterCollection commandParameters, Int32 behavior)
+   at RSSBus.core.CustomizedSchemaDataContext.ExecuteQuery(IDataStatement stmt, QueryParameterCollection commandParameters, Int32 behavior)
+   at RSSBus.core.InsertStatement.ExecuteLive()
+   at RSSBus.core.UpdateStatement.ExecuteQuery()
+   at RSSBus.core.CDataStatement.Execute(QueryParameterCollection commandParameters)
