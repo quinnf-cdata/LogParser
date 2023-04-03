@@ -19,17 +19,17 @@
                 <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
             </padding>
 
-            <HBox>
+            <HBox spacing="1.5">
                 <Button text="Choose file" onAction="#onFileChooserButtonClick"/>
                 <TextField fx:id="filePath"/>
             </HBox>
 
-            <HBox>
+            <HBox spacing="1.5">
                 <Button text="Load file" onAction="#onLoadFileButtonClick" />
                 <Button text="Reset" onAction="#onResetButtonClick"/>
             </HBox>
             <Button text="Decode Hex" onAction="#onDecodeHexButtonClick" />
-            <HBox>
+            <HBox spacing="1.5">
                 <Button text="Split by:" onAction="#onSplitByConnectionButtonClick" />
                 <ComboBox fx:id="fileSplitType"></ComboBox>
             </HBox>

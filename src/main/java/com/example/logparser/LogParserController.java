@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -277,7 +278,10 @@ public class LogParserController {
             } while (research);
         });
 
-        return new HBox(searchTF, searchBtn);
+        HBox h = new HBox(searchTF, searchBtn);
+        h.setSpacing(1.5);
+
+        return h;
     }
 
     private HBox getLogNavButtonSet(int uniqueID) {
@@ -286,6 +290,7 @@ public class LogParserController {
         TextField pageJumpTF = new TextField();
         Button pageJumpButton = new Button("Go");
         Text availablePages = new Text(String.valueOf(tabMetadata.getTabPagesAvailable(uniqueID)));
+        availablePages.setTextAlignment(TextAlignment.CENTER);
 
         pageJumpTF.setMaxWidth(50);
         pageJumpTF.promptTextProperty().bindBidirectional(new SimpleStringProperty(String.valueOf(tabMetadata.getTabCurrentPage(uniqueID))));
@@ -303,6 +308,9 @@ public class LogParserController {
             getTabs();
         });
 
-        return new HBox(backButton, nextButton, pageJumpTF, pageJumpButton, availablePages);
+        HBox h = new HBox(backButton, nextButton, pageJumpTF, pageJumpButton, availablePages);
+        h.setSpacing(1.5);
+
+        return h;
     }
 }
