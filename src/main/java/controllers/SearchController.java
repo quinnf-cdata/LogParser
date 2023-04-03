@@ -13,6 +13,7 @@ public class SearchController {
     private int currentResultLocation;
 
     public SearchController() {
+        this.keyword = "";
         search = new Search();
     }
 
@@ -26,7 +27,10 @@ public class SearchController {
     }
 
     public void setKeyword(String keyword) {
-        this.keyword = keyword;
+        if (!this.keyword.equalsIgnoreCase(keyword)) {
+            search.clear();
+            this.keyword = keyword;
+        }
     }
 
     public void execSearch(HashMap<Integer,String> data, String keyword) {
@@ -36,18 +40,14 @@ public class SearchController {
 
     public void execSearch(HashMap<Integer,String> data) {
         keyword = keyword.toUpperCase();
-        for (Map.Entry m:data.entrySet()) {
-            if (m.getValue().toString().toUpperCase().contains(keyword)) {
-                search.addSearchResult((Integer) m.getKey());
-                continue;
+        for (Map.Entry<Integer,String> m:data.entrySet()) {
+            if (m.getValue().toUpperCase().contains(keyword)) {
+                search.addSearchResult(m.getKey());
             }
         }
     }
     public List<Integer> getResultList() { return search.getSearchResults(); }
 
-    public Integer getResultIndex(int index) {
-        return search.getSearchResults().get(index);
-    }
 
     public Integer getNextResult() { return search.getNext(); }
 }

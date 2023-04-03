@@ -10,10 +10,10 @@ class FileIndexTest {
     @Test
     void addToIndex() {
         FileIndex f = new FileIndex();
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)",1);
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
-        f.addToIndex("2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'",3);
-        f.addToIndex("2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.",15);
+        f.addToIndex(1, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)");
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
+        f.addToIndex(3, "2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'");
+        f.addToIndex(15, "2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.");
 
         assertEquals(2,f.searchIndexByClassification(FileIndex.Classification.CONNECTION).size());
         assertEquals(1,f.searchIndexByClassification(FileIndex.Classification.HTTP_RESPONSE).size());
@@ -46,11 +46,11 @@ class FileIndexTest {
     @Test
     void searchIndexByClassification() {
         FileIndex f = new FileIndex();
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)",1);
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
-        f.addToIndex("2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'",3);
-        f.addToIndex("2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.",15);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection",200);
+        f.addToIndex(1, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)");
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
+        f.addToIndex(3, "2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'");
+        f.addToIndex(15, "2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.");
+        f.addToIndex(200, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection");
 
         assertEquals(2,f.searchIndexByClassification(FileIndex.Classification.CONNECTION).size());
         assertEquals(1,f.searchIndexByClassification(FileIndex.Classification.HTTP_RESPONSE).size());
@@ -61,11 +61,11 @@ class FileIndexTest {
     @Test
     void searchIndex() {
         FileIndex f = new FileIndex();
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)",1);
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
-        f.addToIndex("2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'",3);
-        f.addToIndex("2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.",15);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection",200);
+        f.addToIndex(1, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)");
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
+        f.addToIndex(3, "2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'");
+        f.addToIndex(15, "2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.");
+        f.addToIndex(200, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection");
 
         assertEquals(3,f.searchIndex("connection").size());
         assertEquals(1,f.searchIndex("RES: 4997").size());
@@ -77,12 +77,12 @@ class FileIndexTest {
     void testToStringGroup() {
         FileIndex f = new FileIndex();
 
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)",1);
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
-        f.addToIndex("2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'",3);
-        f.addToIndex("2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.",15);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection",200);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Opened Xero connection",100);
+        f.addToIndex(1, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)");
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
+        f.addToIndex(3, "2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'");
+        f.addToIndex(15, "2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.");
+        f.addToIndex(200, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection");
+        f.addToIndex(100, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Opened Xero connection");
 
         assertEquals("1\t[CONNECTION: 2]\n" +
                 "123\t[CONNECTION: 3]\n",f.toString(3));
@@ -95,12 +95,12 @@ class FileIndexTest {
     void testToStringClassification() {
         FileIndex f = new FileIndex();
 
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)",1);
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
-        f.addToIndex("2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'",3);
-        f.addToIndex("2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.",15);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection",200);
-        f.addToIndex("2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Opened Xero connection",100);
+        f.addToIndex(1, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 2]Connected (0 - OK)");
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
+        f.addToIndex(3, "2023-02-28T15:19:35.960+0000\t5\t[ |Q-Id]\t[META|Schema] Engine Invalid object name 'sys_disconnect'");
+        f.addToIndex(15, "2023-02-28T15:19:35.938+0000\t2\t[2|Q-Id]\t[HTTP|Res: 4997] Request completed in 502 ms.");
+        f.addToIndex(200, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Closed Xero connection");
+        f.addToIndex(100, "2023-03-29T10:43:12.535-0400\t1\t[2|Q-Id]\t[INFO|Connec] Opened Xero connection");
 
         assertEquals("1\t[CONNECTION: 2]\n" +
                 "123\t[CONNECTION: 3]\n",f.toString(FileIndex.Classification.CONNECTION));
@@ -122,7 +122,7 @@ class FileIndexTest {
     void testClear() {
         FileIndex f = new FileIndex();
 
-        f.addToIndex("2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)",123);
+        f.addToIndex(123, "2023-02-24T14:53:12.488-0500\t2\t[Connection: 3]Connected (0 - OK)");
 
         assertEquals(1, f.getClassificationIndex().size());
         assertEquals(1, f.getFileIndex().size());

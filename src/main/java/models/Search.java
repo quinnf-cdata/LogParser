@@ -9,15 +9,10 @@ public class Search {
 
     public Search() {
         this.searchResults = new ArrayList<>();
-        this.cursor = 0;
     }
 
     public List<Integer> getSearchResults() {
         return searchResults;
-    }
-
-    public void setSearchResults(List<Integer> searchResults) {
-        this.searchResults = searchResults;
     }
 
     public void addSearchResult(Integer lineNumber) {
@@ -28,7 +23,8 @@ public class Search {
         cursor++;
         return r;
     }
-    public int getCursor() {
-        return cursor;
+
+    public void clear() {
+        searchResults.clear();
     }
 }

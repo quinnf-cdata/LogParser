@@ -38,3 +38,6 @@ build/
 .DS_Store
 
 ##/testFiles/
+/testFiles/toDiskTest.log
+/testFiles/HTTPREQ0.log
+/testFiles/HTTPREQ1.log

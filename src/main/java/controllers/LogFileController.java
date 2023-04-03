@@ -1,34 +1,28 @@
 package controllers;
 
-import com.google.protobuf.ByteString;
-import models.FileIndex;
 import models.LogFile;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LogFileController {
     private List<LogFile> logFiles;
 
-    private final boolean[] loading = {false};
-
-
     public LogFileController() {
         logFiles = new ArrayList<>();
     }
 
-    public void getFileContents(String path) {
+    private void getFileContents(String path) {
 
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
+                String iPath = path.replaceAll("/","\\\\");
                 /*while (loading[0] == true) {
                     try {
                         TimeUnit.SECONDS.sleep(3);
@@ -36,11 +30,9 @@ public class LogFileController {
                         throw new RuntimeException(e);
                     }
                 }*/
-                loading[0] = true;
-                int currentFileIndex = getLogFileIdx(path);
-                if (currentFileIndex == -1) {
-                    addLogFile(path,null);
-                }
+                int currentFileIndex = getLogFileIdx(iPath);
+                // Attempt to add file. addLogFile() will check for dups.
+                addLogFile(iPath,null);
 
                 LogFile l = logFiles.get(currentFileIndex);
                 l.setLoading(true);
@@ -48,7 +40,7 @@ public class LogFileController {
                 try {
                     int lineNumber = 0;
 
-                    FileInputStream fis = new FileInputStream(path);
+                    FileInputStream fis = new FileInputStream(iPath);
                     BufferedInputStream bis = new BufferedInputStream(fis);
                     BufferedReader br = new BufferedReader(new InputStreamReader(bis));
 
@@ -56,7 +48,7 @@ public class LogFileController {
                         String line;
                         while ((line=br.readLine())!=null) {
                             lineNumber++;
-                            l.addToIndex(line,lineNumber);
+                            l.addToIndex(lineNumber, line);
                             l.setLogData(line,lineNumber);
                         }
 
@@ -71,17 +63,18 @@ public class LogFileController {
                 }
 
                 l.setLoading(false);
-                loading[0] = false;
             }
         });
 
         t.start();
     }
 
-    public boolean getLoadingStatus() {
-        return loading[0];
+    public void indexLogData(int index) {
+        LogFile l = logFiles.get(index);
+        for (Map.Entry<Integer,String> m:l.getLogData().entrySet() ) {
+            l.addToIndex(m.getKey(),m.getValue());
+        }
     }
-
 
     public void appendLogFileContents(String content, int lineNumber,String path) {
 
@@ -96,6 +89,7 @@ public class LogFileController {
 
     public LogFile getLogFile(int index) { return  logFiles.get(index); }
     public int getLogFileIdx(String path) {
+        path = path.replaceAll("/","\\\\");
         for (int x = 0; x < logFiles.size(); x++) {
             LogFile l = logFiles.get(x);
             if (l.getLocalPath().compareTo(path) == 0) {
@@ -105,11 +99,11 @@ public class LogFileController {
         return -1;
     }
 
-    public int addLogFile(String path, HashMap<Integer,String> data) {
+    public void addLogFile(String path, HashMap<Integer,String> data) {
         addLogFile(path, data, null);
-        return logFiles.size()-1;
     }
     public void addLogFile(String path, HashMap<Integer,String> data,String friendlyName) {
+        path = path.replaceAll("/","\\\\");
         if (getLogFileIdx(path) == -1) {
             logFiles.add(new LogFile(path,friendlyName,data));
         }
@@ -193,6 +187,8 @@ public class LogFileController {
 
         createFile(newFilePath);
 
+        addLogFile(newFilePath,l.getLogData(),l.getFriendlyName());
+
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -244,21 +240,20 @@ public class LogFileController {
         StringBuilder output = new StringBuilder("");
 
         for (int i = 0; i < hexString.length(); i += 2) {
-            String str = hexString.substring(i, i + 2);
-            output.append((char) Integer.parseInt(str, 16));
+            output.append((char) Integer.parseInt(hexString.substring(i, i + 2), 16));
         }
 
         return output.toString();
     }
 
-    private String decodeProtobuf(String hexString) {
+/*    private String decodeProtobuf(String hexString) {
         byte[] bytes = ByteBuffer.wrap(hexString.getBytes()).array();
         ByteString decoded= ByteString.copyFrom(bytes);
 
         String decodedHex = decoded.toStringUtf8();
 
         return decodedHex;
-    }
+    }*/
 
 
     private boolean isHex(String s) {

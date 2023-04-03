@@ -113,7 +113,7 @@ public class FileIndex {
         return false;
     }
 
-    public void addToIndex(String line, int lineNumber) {
+    public void addToIndex(int lineNumber, String line) {
         Classification classification = validateKeyword(line);
 
         if (classification != null) {

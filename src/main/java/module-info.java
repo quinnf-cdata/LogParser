@@ -14,4 +14,5 @@ module com.example.logparser {
     opens com.example.logparser to javafx.fxml;
     exports com.example.logparser;
     exports models;
+    exports controllers;
 }
