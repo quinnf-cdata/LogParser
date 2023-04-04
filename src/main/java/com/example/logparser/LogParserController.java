@@ -15,10 +15,8 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import models.FileIndex;
 import models.LogFile;
@@ -71,7 +69,7 @@ public class LogParserController {
 
     @FXML
     protected void onDecodeHexButtonClick() {
-        List<LogFile> lf = logFileController.getLogFiles();
+        ConcurrentHashMap<Integer,LogFile> lf = logFileController.getLogFiles();
         int size = lf.size();
 
         for (int i = 0; i < size; i++) {
@@ -92,16 +90,16 @@ public class LogParserController {
         List<FileIndex.Classification> classifications = Arrays.asList(FileIndex.Classification.values());
         List<String> indexTabs = new ArrayList<>();
 
-        for (LogFile l : logFileController.getLogFiles()) {
+        for (Map.Entry<Integer,LogFile> l : logFileController.getLogFiles().entrySet()) {
             for (FileIndex.Classification cc : classifications) {
                 String indexString;
                 String tabTitle = "";
 
                 if (groupByType.selectedProperty().getValue() && !cc.groupOnly) {
-                    indexString = l.toString(cc);
+                    indexString = l.getValue().toString(cc);
                     tabTitle = cc.toString();
                 } else {
-                    indexString = l.toString(cc.group);
+                    indexString = l.getValue().toString(cc.group);
                     for (FileIndex.GroupName gn : FileIndex.GroupName.values()) {
                         if (cc.group == gn.groupID) {
                             tabTitle = gn.friendlyName;
@@ -113,7 +111,7 @@ public class LogParserController {
                 if (!indexTabs.contains(tabTitle)) {
                     indexTabs.add(tabTitle);
 
-                    if (!indexString.isEmpty() && l.searchIndexByClassification(cc).size() >= 1) {
+                    if (!indexString.isEmpty() && l.getValue().searchIndexByClassification(cc).size() >= 1) {
                         indexTabPane.getTabs().add(new Tab(tabTitle, new VirtualizedScrollPane(new CodeArea(indexString))));
                     }
                 }
@@ -129,9 +127,9 @@ public class LogParserController {
             fileSplitType.getItems().clear();
         }
 
-        for (LogFile l : logFileController.getLogFiles()) {
+        for (HashMap.Entry<Integer,LogFile> l : logFileController.getLogFiles().entrySet()) {
             for (FileIndex.Classification c : FileIndex.Classification.values()) {
-                if (!l.searchClassificationIndex(c).isEmpty()) {
+                if (!l.getValue().searchClassificationIndex(c).isEmpty()) {
                     fileSplitType.getItems().add(c.toString());
                 }
             }
@@ -150,7 +148,7 @@ public class LogParserController {
 
 
     private void getTabs() {
-        List<LogFile> lf = logFileController.getLogFiles();
+        ConcurrentHashMap<Integer,LogFile> lf = logFileController.getLogFiles();
         int size = lf.size();
 
         for (int i = 0; i < size; i++) {

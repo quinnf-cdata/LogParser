@@ -55,7 +55,7 @@ class FileIndexTest {
         assertEquals(2,f.searchIndexByClassification(FileIndex.Classification.CONNECTION).size());
         assertEquals(1,f.searchIndexByClassification(FileIndex.Classification.HTTP_RESPONSE).size());
         assertEquals(0,f.searchIndexByClassification(FileIndex.Classification.HTTP_REQUEST).size());
-        assertEquals(1,f.searchIndexByClassification(FileIndex.Classification.CONNECTION_CLOSED_MESSAGE).size());
+        assertEquals(1,f.searchIndexByClassification(FileIndex.Classification.CONNECTION_MESSAGE).size());
     }
 
     @Test
@@ -106,9 +106,7 @@ class FileIndexTest {
                 "123\t[CONNECTION: 3]\n",f.toString(FileIndex.Classification.CONNECTION));
         assertEquals("15\t[HTTP|RES: 4997]\n",f.toString(FileIndex.Classification.HTTP_RESPONSE));
         assertEquals("100\t[INFO|CONNEC] OPENED XERO CONNECTION\n" +
-                "200\t[INFO|CONNEC] CLOSED XERO CONNECTION\n",f.toString(FileIndex.Classification.CONNECTION_CLOSED_MESSAGE));
-        assertEquals("100\t[INFO|CONNEC] OPENED XERO CONNECTION\n" +
-                "200\t[INFO|CONNEC] CLOSED XERO CONNECTION\n",f.toString(FileIndex.Classification.CONNECTION_OPEN_MESSAGE));
+                "200\t[INFO|CONNEC] CLOSED XERO CONNECTION\n",f.toString(FileIndex.Classification.CONNECTION_MESSAGE));
     }
 
     @Test
