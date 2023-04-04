@@ -97,15 +97,15 @@ public class FileIndex {
             if (m.find()) {
                 String match = m.group();
                 if (!existsInIndex(match) || c.allowDuplicates) {
-                    fileIndex.put(Integer.valueOf(lineNumber),match);
+                    fileIndex.put(lineNumber,match);
                 }
             }
         }
     }
 
     private boolean existsInIndex(String word) {
-        for (Map.Entry m:fileIndex.entrySet()) {
-            if (m.getValue().toString().equalsIgnoreCase(word)) {
+        for (Map.Entry<Integer,String> m:fileIndex.entrySet()) {
+            if (m.getValue().equalsIgnoreCase(word)) {
                 return true;
             }
         }
@@ -208,11 +208,10 @@ public class FileIndex {
 
 
     public enum Classification {
-        CONNECTION("\\[CONNECTION:\\s\\d\\]\\b",false,3,false),
+        CONNECTION("\\[CONNECTION: \\d+\\]",false,3,false),
         HTTP_REQUEST("\\[HTTP\\|REQ: \\d+\\]",false,2,false),
         HTTP_RESPONSE("\\[HTTP\\|RES: \\d+\\]",false,2,false),
-        CONNECTION_CLOSED_MESSAGE("\\[INFO\\|CONNEC\\] CLOSED [a-zA-Z]* CONNECTION",true,1,true),
-        CONNECTION_OPEN_MESSAGE("\\[INFO\\|CONNEC\\] OPENED [a-zA-Z]* CONNECTION",true,1,true);
+        CONNECTION_MESSAGE("\\[INFO\\|CONNEC\\] (CLOSED|OPENED) [a-zA-Z]* CONNECTION",true,1,true);
 
         public final String regexString;
         public final boolean groupOnly;

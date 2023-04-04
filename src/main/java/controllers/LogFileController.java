@@ -7,14 +7,15 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LogFileController {
-    private List<LogFile> logFiles;
+    private ConcurrentHashMap<Integer,LogFile> logFiles;
 
     public LogFileController() {
-        logFiles = new ArrayList<>();
+        logFiles = new ConcurrentHashMap<>();
     }
 
     private void getFileContents(String path) {
@@ -83,7 +84,7 @@ public class LogFileController {
         f.setLogData(content,lineNumber);
     }
 
-    public List<LogFile> getLogFiles() {
+    public ConcurrentHashMap<Integer, LogFile> getLogFiles() {
         return logFiles;
     }
 
@@ -104,8 +105,11 @@ public class LogFileController {
     }
     public void addLogFile(String path, HashMap<Integer,String> data,String friendlyName) {
         path = path.replaceAll("/","\\\\");
-        if (getLogFileIdx(path) == -1) {
-            logFiles.add(new LogFile(path,friendlyName,data));
+        int idx = getLogFileIdx(path);
+        if (idx == -1) {
+            logFiles.put(logFiles.size(),new LogFile(path,friendlyName,data));
+        } else if (!logFiles.get(idx).isLoading()) {
+            logFiles.put(idx,new LogFile(path,friendlyName,data));
         }
     }
 
@@ -208,7 +212,7 @@ public class LogFileController {
     }
 
     public void loadFilesToMemory() {
-        List<LogFile> lf =this.getLogFiles();
+        ConcurrentHashMap<Integer,LogFile> lf = this.getLogFiles();
         int size = lf.size();
 
         for (int i = 0; i < size; i++) {
