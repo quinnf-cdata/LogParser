@@ -138,9 +138,12 @@ public class LogParserController {
 
     @FXML
     protected void onSplitByConnectionButtonClick() {
-        logFileController.splitLogByType(fileSplitType.getValue().toString());
-        logFileController.loadFilesToMemory();
-        getTabs();
+        Object v = fileSplitType.getValue();
+        if (v != null) {
+            logFileController.splitLogByType(v.toString());
+            logFileController.loadFilesToMemory();
+            getTabs();
+        }
     }
 
     @FXML
