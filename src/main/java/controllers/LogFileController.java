@@ -31,6 +31,8 @@ public class LogFileController {
                         throw new RuntimeException(e);
                     }
                 }*/
+
+
                 int currentFileIndex = getLogFileIdx(iPath);
                 // Attempt to add file. addLogFile() will check for dups.
                 addLogFile(iPath,null);
@@ -105,6 +107,10 @@ public class LogFileController {
     }
     public void addLogFile(String path, HashMap<Integer,String> data,String friendlyName) {
         path = path.replaceAll("/","\\\\");
+        if (friendlyName == null) {
+            Path p = Paths.get(path);
+            friendlyName = p.getFileName().toString();
+        }
         int idx = getLogFileIdx(path);
         if (idx == -1) {
             logFiles.put(logFiles.size(),new LogFile(path,friendlyName,data));
