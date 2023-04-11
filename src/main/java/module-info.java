@@ -10,6 +10,7 @@ module com.example.logparser {
     requires protobuf.java.util;
     requires org.fxmisc.flowless;
     requires org.junit.jupiter.api;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.logparser to javafx.fxml;
     exports com.example.logparser;

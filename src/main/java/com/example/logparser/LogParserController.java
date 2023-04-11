@@ -1,5 +1,6 @@
 package com.example.logparser;
 
+import controllers.CategoryController;
 import controllers.LogFileController;
 import controllers.SearchController;
 import javafx.beans.property.SimpleStringProperty;
@@ -18,6 +19,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+import models.Category;
 import models.FileIndex;
 import models.LogFile;
 import models.TabMetadata;
@@ -87,21 +89,22 @@ public class LogParserController {
         if (!(indexTabPane.getTabs() == null)) {
             indexTabPane.getTabs().clear();
         }
-        List<FileIndex.Classification> classifications = Arrays.asList(FileIndex.Classification.values());
+        CategoryController categoryController = new CategoryController();
+        HashSet<Category> categories = categoryController.getCategories();
         List<String> indexTabs = new ArrayList<>();
 
         for (Map.Entry<Integer,LogFile> l : logFileController.getLogFiles().entrySet()) {
-            for (FileIndex.Classification cc : classifications) {
+            for (Category cc : categories) {
                 String indexString;
                 String tabTitle = "";
 
-                if (groupByType.selectedProperty().getValue() && !cc.groupOnly) {
+                if (groupByType.selectedProperty().getValue() && !cc.isGroupOnly()) {
                     indexString = l.getValue().toString(cc);
                     tabTitle = cc.toString();
                 } else {
-                    indexString = l.getValue().toString(cc.group);
+                    indexString = l.getValue().toString(cc.getGroup());
                     for (FileIndex.GroupName gn : FileIndex.GroupName.values()) {
-                        if (cc.group == gn.groupID) {
+                        if (cc.getGroup() == gn.groupID) {
                             tabTitle = gn.friendlyName;
                             break;
                         }
@@ -111,7 +114,7 @@ public class LogParserController {
                 if (!indexTabs.contains(tabTitle)) {
                     indexTabs.add(tabTitle);
 
-                    if (!indexString.isEmpty() && l.getValue().searchIndexByClassification(cc).size() >= 1) {
+                    if (!indexString.isEmpty() && l.getValue().searchIndexByCategory(cc).size() >= 1) {
                         indexTabPane.getTabs().add(new Tab(tabTitle, new VirtualizedScrollPane(new CodeArea(indexString))));
                     }
                 }
@@ -128,7 +131,7 @@ public class LogParserController {
         }
 
         for (HashMap.Entry<Integer,LogFile> l : logFileController.getLogFiles().entrySet()) {
-            for (FileIndex.Classification c : FileIndex.Classification.values()) {
+            for (Category c : new CategoryController().getCategories()) {
                 if (!l.getValue().searchClassificationIndex(c).isEmpty()) {
                     fileSplitType.getItems().add(c.toString());
                 }

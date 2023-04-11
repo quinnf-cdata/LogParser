@@ -132,7 +132,7 @@ public class LogFileController {
     }
     public void splitLogByType(String type,LogFile logFile,String directory) {
         // Get first connection line number, then get the next one to indicate end of file. Repeat
-        List<String[]> connections = logFile.searchIndexByClassification(logFile.toClassification(type));
+        List<String[]> connections = logFile.searchIndexByCategory(logFile.toClassification(type));
 
 
         for (int i = 0; i < connections.size(); i++) {
