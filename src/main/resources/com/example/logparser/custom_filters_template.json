@@ -1,0 +1,44 @@
+[
+  {
+    "filters": [
+      {
+        "displayname": "meta",
+        "pattern": "META|Exec"
+      },
+      {
+        "displayname": "meta",
+        "pattern": "META|Schema"
+      },
+      {
+        "displayname": "exec",
+        "pattern": "EXEC|"
+      },
+      {
+        "displayname": "HTTP",
+        "pattern": "HTTP|Req"
+      },
+      {
+        "displayname": "HTTP",
+        "pattern": "HTTP|Res"
+      },
+      {
+        "displayname": "Q-Id",
+        "pattern": "|Q-Id"
+      },
+      {
+        "displayname": "connection",
+        "pattern": "Connection:"
+      }
+    ],
+    "actiontypes": [
+      {
+        "displayname": "Q-Id",
+        "pattern": "QID"
+      },
+      {
+        "displayname": "HTTP",
+        "pattern": "HTTP"
+      }
+    ]
+  }
+]

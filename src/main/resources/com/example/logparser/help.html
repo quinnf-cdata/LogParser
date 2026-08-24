@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- HTML Codes by Quackit.com -->
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden !important;
+        }
+
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        li,
+        td {
+            font-family: "Segoe UI", Verdana, Arial, Tahoma, -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            color: #333;
+            font: 14px Segoe UI, arial, helvetica, clean, sans-serif;
+            font-size: small;
+            font: x-small;
+            overflow: auto;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            height: 100%;
+            margin: 0 auto -30px;
+            /* the bottom margin is the negative value of the footer's height */
+        }
+
+        #content {
+            text-align: left;
+            padding: 15px;
+            padding-bottom: 40px;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+            font-weight: 500;
+            line-height: 1.15;
+            color: #177CB8;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+        }
+
+        h4 {
+            font-size: 1.15em;
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        p {
+            margin: 0px 0em 1em 0em;
+            line-height: 1.4;
+        }
+
+        li {
+            margin-bottom: 4pt;
+        }
+
+        a:active,
+        a:link,
+        a:visited {
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+
+        table {
+            font-size: 1em;
+            margin-top: 1em 0 1em 0;
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        tr {
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #EDF6FF;
+            vertical-align: bottom;
+            color: #215A8F;
+            padding: 5px;
+            border-bottom: 1px solid #90ADBC;
+        }
+
+        td {
+            vertical-align: top;
+            margin-top: .25em;
+            padding: 10px;
+            border-bottom: 1px solid #EDF6FF;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding-left: 1em;
+            border-right: 2px solid white;
+        }
+
+        small {
+            font-size: .85em;
+        }
+
+        tt {
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+        .syntax {
+            margin-top: 0em;
+            margin-left: 1em;
+            margin-right: 1em;
+            background-color: whitesmoke;
+        }
+
+        var {
+            margin: 0;
+            border: 1px solid #ddd;
+            background-color: #f8f8f8;
+            border-radius: 3px;
+            max-width: 100%;
+            display: inline-block;
+            font-style: normal;
+            font-family: monospace;
+            padding: 0 5px;
+        }
+
+        hr {
+            color: silver;
+            background-color: silver;
+            height: 1px;
+            border: none;
+        }
+
+        #toc a {
+            font-family: 'Segoe UI', Verdana, Arial !important;
+            text-decoration: none !important;
+        }
+
+        #toc a:hover {
+            text-decoration: underline !important;
+        }
+
+        /* Style for RSBScript */
+        .source .rsbkey {
+            color: #047;
+            font-weight: normal;
+        }
+
+        /* RSSBus Keyword */
+        .source .nt {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* This is the close tag make it */
+        .source .rsbattr {
+            color: #B30A00;
+            font-weight: bold;
+        }
+
+        /* RSSBus Attr name attr= and item= also in [ attr ] */
+        .source .rsbattrf {
+            color: #B30A00;
+            font-weight: bold;
+        }
+
+        /* RSSBus Attr name in a formatter */
+        .source .rsbbrace {
+            color: #0000FF;
+            font-weight: bold;
+        }
+
+        /* Color for the brace [ ] */
+        .source .rsbform {
+            color: green;
+        }
+
+        /* RSSBus Formatter [ attr |.. ] */
+        .source .rsbop {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* RSSBus Operation name */
+        .source .s {
+            color: dimgray;
+        }
+
+        /* Literal.String */
+        .source .na {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* All the attribute name*/
+
+        .source .hll {
+            background-color: #ffffcc
+        }
+
+        .source .c {
+            color: #408080;
+            font-style: italic
+        }
+
+        /* Comment */
+        .source .err {
+            border: 1px solid #FF0000
+        }
+
+        /* Error */
+        .source .k {
+            color: #008000;
+            font-weight: bold
+        }
+
+        /* Keyword */
+        .source .o {
+            color: #666666
+        }
+
+        /* Operator */
+        .source .cm {
+            color: #408080;
+            font-style: italic
+        }
+
+        /* Comment.Multiline */
+        .source .cp {
+            color: #BC7A00
+        }
+
+        /* Comment.Preproc */
+        .source .c1 {
+            color: #408080;
+            font-style: italic
+        }
+
+        /* Comment.Single */
+        .source .cs {
+            color: #408080;
+            font-style: italic
+        }
+
+        /* Comment.Special */
+        .source .gd {
+            color: #A00000
+        }
+
+        /* Generic.Deleted */
+        .source .ge {
+            font-style: italic
+        }
+
+        /* Generic.Emph */
+        .source .gr {
+            color: #FF0000
+        }
+
+        /* Generic.Error */
+        .source .gh {
+            color: #000080;
+            font-weight: bold
+        }
+
+        /* Generic.Heading */
+        .source .gi {
+            color: #00A000
+        }
+
+        /* Generic.Inserted */
+        .source .go {
+            color: #808080
+        }
+
+        /* Generic.Output */
+        .source .gp {
+            color: #000080;
+            font-weight: bold
+        }
+
+        /* Generic.Prompt */
+        .source .gs {
+            font-weight: bold
+        }
+
+        /* Generic.Strong */
+        .source .gu {
+            color: #800080;
+            font-weight: bold
+        }
+
+        /* Generic.Subheading */
+        .source .gt {
+            color: #0040D0
+        }
+
+        /* Generic.Traceback */
+        .source .kc {
+            color: #008000;
+            font-weight: bold
+        }
+
+        /* Keyword.Constant */
+        .source .kd {
+            color: #008000;
+            font-weight: bold
+        }
+
+        /* Keyword.Declaration */
+        .source .kn {
+            color: #008000;
+            font-weight: bold
+        }
+
+        /* Keyword.Namespace */
+        .source .kp {
+            color: #008000
+        }
+
+        /* Keyword.Pseudo */
+        .source .kr {
+            color: #008000;
+            font-weight: bold
+        }
+
+        /* Keyword.Reserved */
+        .source .kt {
+            color: #B00040
+        }
+
+        /* Keyword.Type */
+        .source .m {
+            color: #666666
+        }
+
+        /* Literal.Number */
+
+        .source .nb {
+            color: #008000
+        }
+
+        /* Name.Builtin */
+        .source .nc {
+            color: #0000FF;
+            font-weight: bold
+        }
+
+        /* Name.Class */
+        .source .no {
+            color: #880000
+        }
+
+        /* Name.Constant */
+        .source .nd {
+            color: #AA22FF
+        }
+
+        /* Name.Decorator */
+        .source .ni {
+            color: #999999;
+            font-weight: bold
+        }
+
+        /* Name.Entity */
+        .source .ne {
+            color: #D2413A;
+            font-weight: bold
+        }
+
+        /* Name.Exception */
+        .source .nf {
+            color: #0000FF
+        }
+
+        /* Name.Function */
+        .source .nl {
+            color: #A0A000
+        }
+
+        /* Name.Label */
+        .source .nn {
+            color: #0000FF;
+            font-weight: bold
+        }
+
+        /* Name.Namespace */
+        .source .nt {
+            color: #333;
+            font-weight: normal
+        }
+
+        /* Name.Tag */
+        .source .nv {
+            color: #19177C
+        }
+
+        /* Name.Variable */
+        .source .ow {
+            color: #AA22FF;
+            font-weight: bold
+        }
+
+        /* Operator.Word */
+        .source .w {
+            color: #bbbbbb
+        }
+
+        /* Text.Whitespace */
+        .source .mf {
+            color: #666666
+        }
+
+        /* Literal.Number.Float */
+        .source .mh {
+            color: #666666
+        }
+
+        /* Literal.Number.Hex */
+        .source .mi {
+            color: #666666
+        }
+
+        /* Literal.Number.Integer */
+        .source .mo {
+            color: #666666
+        }
+
+        /* Literal.Number.Oct */
+        .source .sb {
+            color: #BA2121
+        }
+
+        /* Literal.String.Backtick */
+        .source .sc {
+            color: #BA2121
+        }
+
+        /* Literal.String.Char */
+        .source .sd {
+            color: #BA2121;
+            font-style: italic
+        }
+
+        /* Literal.String.Doc */
+        .source .s2 {
+            color: #BA2121
+        }
+
+        /* Literal.String.Double */
+        .source .se {
+            color: #BB6622;
+            font-weight: bold
+        }
+
+        /* Literal.String.Escape */
+        .source .sh {
+            color: #BA2121
+        }
+
+        /* Literal.String.Heredoc */
+        .source .si {
+            color: #BB6688;
+            font-weight: bold
+        }
+
+        /* Literal.String.Interpol */
+        .source .sx {
+            color: #008000
+        }
+
+        /* Literal.String.Other */
+        .source .sr {
+            color: #BB6688
+        }
+
+        /* Literal.String.Regex */
+        .source .s1 {
+            color: #BA2121
+        }
+
+        /* Literal.String.Single */
+        .source .ss {
+            color: #19177C
+        }
+
+        /* Literal.String.Symbol */
+        .source .bp {
+            color: #008000
+        }
+
+        /* Name.Builtin.Pseudo */
+        .source .vc {
+            color: #19177C
+        }
+
+        /* Name.Variable.Class */
+        .source .vg {
+            color: #19177C
+        }
+
+        /* Name.Variable.Global */
+        .source .vi {
+            color: #19177C
+        }
+
+        /* Name.Variable.Instance */
+        .source .il {
+            color: #666666
+        }
+
+        /* Literal.Number.Integer.Long */
+
+        select,
+        input,
+        button,
+        textarea,
+        button {
+            font: 99% arial, helvetica, clean, sans-serif;
+        }
+
+        table,
+        td {
+            font-size: 14px;
+            font: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        pre,
+        code,
+        kbd,
+        samp,
+        tt {
+            font-family: monospace;
+            font-size: 108%;
+            line-height: 100%;
+        }
+
+        a,
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        #content a:not([class]) {
+            text-decoration: none;
+            background-image: linear-gradient(#eeebee 0%, #eeebee 100%);
+            background-repeat: repeat-x;
+            background-position: 0 100%;
+            background-size: 1px 1px;
+        }
+
+        #content a:not([class]):hover {
+            background-image: linear-gradient(rgba(23, 124, 184, 0.45) 0%, rgba(23, 124, 184, 0.45) 100%);
+            background-size: 1px 1px;
+        }
+
+        #whiframe {
+            position: relative;
+            display: flex;
+            height: calc(100vh - 65px - 40px);
+            overflow: auto;
+        }
+
+        #whiframe table,
+        .whiframe table {
+            padding-left: 20px;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+        }
+
+        #whiframe table td,
+        .whiframe table td {
+            padding-top: 0.5em;
+            padding-right: 0.75em;
+            padding-bottom: 0.5em;
+            padding-left: 0.75em;
+            background-color: white;
+            border-bottom: 1px solid rgba(238, 235, 238, 0.5);
+            border-left: 1px solid #eeebee;
+            border-top: none !important;
+        }
+
+        #whiframe p,
+        .whiframe p {
+            padding: 0;
+            white-space: normal;
+        }
+
+        #default,
+        .wrapper .content>h1 {
+            font-size: 27.2px;
+            border-bottom: 1px solid #eeebee;
+            padding-bottom: 15px;
+            margin-top: .7em;
+            margin-bottom: 30px;
+        }
+
+        #whiframe img,
+        .whiframe img {
+            max-width: 660px;
+        }
+
+        #whiframe pre,
+        .whiframe pre {
+            border: none;
+            margin: 1em 0 1em 0 !important;
+            white-space: pre-wrap;
+            word-break: keep-all;
+            line-height: 1.4em;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        #whtitle {
+            display: block;
+            font-size: 85%;
+            color: gray;
+            padding-bottom: 5px;
+            border-bottom: 1px silver solid;
+        }
+
+        #whlayout {
+            height: 100%;
+            width: 100%;
+            display: block;
+            padding-top: 65px;
+        }
+
+        #whlayout>tbody {
+            display: block;
+            width: 100%;
+        }
+
+        #whlayout td {
+            vertical-align: top;
+        }
+
+        #whtoc {
+            padding: 10px 0 0 10px;
+        }
+
+        #whsizer {
+            height: 100%;
+            background: #fafafa;
+            display: block;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+        }
+
+        #whtoggle {
+            width: 13px;
+            height: 62px;
+            background: url(help.png) -7 no-repeat;
+            display: block;
+            position: absolute;
+            top: 65px;
+        }
+
+        #whhelp {
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            border: none;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+
+        #whheader {
+            width: 100%;
+            height: 65px;
+            background: #00A0FF;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+<!--            position: absolute;-->
+
+        }
+
+        #whheader h1 {
+            display: inline-block;
+            margin-top: 1.15em;
+            padding-left: 1em;
+            padding-top: .2em;
+            padding-bottom: .2em;
+            font-size: 1.2em;
+            font-weight: 400;
+            border-bottom: none;
+            border-left: 1px white solid;
+            color: white;
+<!--            position: absolute;-->
+            left: 150px;
+        }
+
+        #whheader .phones {
+            position: absolute;
+            right: 2em;
+            bottom: 8px;
+            color: #efefef;
+            font-size: 95%;
+            height: 25px;
+        }
+
+        #whlogo {
+            display: block;
+            width: 120px;
+            height: 34px;
+            position: absolute;
+            left: 30px;
+            top: 14px;
+            background: url(logo-cdata.png) no-repeat;
+            background-size: 85%;
+        }
+
+        #whfeedback {
+            display: none;
+            padding-left: 20px;
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            font-size: 90%;
+            height: 17px;
+        }
+
+        #whfeedback i {
+            background: url(help.png) -165px -14px no-repeat;
+            height: 17px;
+            width: 17px;
+            display: block;
+            float: left;
+            margin-right: 3px;
+        }
+
+        #whfeedbackform td {
+            padding: 4px;
+        }
+
+        #whcontent {
+            display: flex;
+            height: calc(100vh - 65px - 40px);
+            overflow: hidden;
+        }
+
+        #whrightcol {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #wrapper {
+            flex: 3;
+        }
+
+        #whfooter {
+            font-size: 0.95em;
+            border-top: 1px solid #e8e8e8;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 20px;
+            display: block;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #efefef;
+            z-index: 999;
+            height: 40px;
+            color: #5c5962;
+        }
+
+        #whfooter .content {
+            padding: 3px 10px !important;
+            position: relative;
+            font-size: .9em;
+        }
+
+        #whfooter .content .build {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+
+        #whfeedbackform {
+            position: absolute;
+            width: 400px;
+            z-index: 90000;
+            display: none;
+            border: 1px gray solid;
+            background-color: white;
+            padding: 20px;
+        }
+
+
+        #newver {
+            position: absolute;
+            top: -50px;
+            width: 500px;
+        }
+
+        /* syntax highlighter style modification for jekyll like style */
+        .syntaxhighlighter code,
+        .code,
+        pre {
+            font-size: 12px !important;
+        }
+
+        .syntaxhighlighter .container,
+        pre {
+            padding: 0.75rem !important;
+            border-radius: 4px;
+        }
+
+        .syntaxhighlighter .plain,
+        .syntaxhighlighter .plain a {
+            color: #333 !important;
+        }
+
+        .syntaxhighlighter .string,
+        .syntaxhighlighter .string a {
+            color: #268bd2 !important;
+        }
+
+        .syntaxhighlighter .keyword {
+            color: #859900 !important;
+        }
+
+        .syntaxhighlighter a,
+        .syntaxhighlighter div,
+        .syntaxhighlighter code,
+        .syntaxhighlighter table,
+        .syntaxhighlighter table td,
+        .syntaxhighlighter table tr,
+        .syntaxhighlighter table tbody,
+        .syntaxhighlighter table thead,
+        .syntaxhighlighter table caption,
+        .syntaxhighlighter textarea {
+            line-height: 1rem !important;
+        }
+
+        .syntaxhighlighter .code .container * {
+            background: none !important;
+        }
+
+        .syntaxhighlighter .container {
+            background: #f5f5f5 !important;
+            border-radius: 4px !important;
+        }
+
+        /* mobile support */
+        @media (min-width: 46.25rem) {
+            #whleftcol {
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 46.25rem) {
+            #hamburger-menu {
+                cursor: pointer;
+            }
+
+            #hamburger-menu:before {
+                content: "\e92b";
+                font-family: "fontello";
+                position: absolute;
+                right: 11px;
+                top: 14px;
+                color: white;
+                font-size: 40px;
+            }
+
+            #whleftcol {
+                position: fixed !important;
+                top: 65px;
+                width: 100%;
+                z-index: 999;
+                left: 0;
+                height: 50%;
+                display: none;
+            }
+
+            #whsizer {
+                width: 100% !important;
+            }
+
+            #resizerCol {
+                display: none;
+            }
+
+            #whheader .phones {
+                left: 35px;
+                bottom: -6px;
+                top: auto;
+                right: auto;
+            }
+
+            #whfooter .content {
+                padding: 0 10px;
+            }
+
+            #whfooter .content .build {
+                bottom: -15px;
+                left: 10px;
+                top: auto;
+                right: auto;
+            }
+
+            .right-table-of-contents {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="whheader">
+<!--        <h1>CData Log Analyzer</h1>-->
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <h1 id="default">CData Log Analyzer</h1>
+            <p></p>
+            <h2>Overview</h2>
+            <p></p>
+            <p>
+                This application is designed to view, filter, sort, and split log files generated by CData drivers.
+            </p>
+            <h2 id="key-features">Key Features</h2>
+            <p></p>
+            <p></p>
+            <ul>
+                <li>Decode hexadecimal content to readable text.</li>
+                <li>Split files into individual files by type or connection.</li>
+                <li>Sort types or connections into chronological order.</li>
+                <li>Combine multiple files into one file.</li>
+                <li>Jump to specific areas of a log with the index.</li>
+            </ul>
+            <br />
+
+            <hr>
+            <h1>Getting Started</h1>
+            <h2>First Look</h2>
+            <p>
+                This application has four sets of buttons and actions that are grouped into their own categories.<br />
+            </p>
+            <ol>
+                <li>File Controls</li>
+                <li>View Options</li>
+                <li>Data Actions</li>
+                <li>Filters</li>
+            </ol>
+
+            <h3>1. File Controls</h3>
+            <p>The File Controls are similar to most other file applications.</p>
+            <p>
+                The <strong>Choose</strong> button to open the explorer and select the files that the application should
+                load.<br />
+                Once the files are selected, the text field next to the button will populate with the files
+                selected.<br />
+
+                <strong><em>Note:</em></strong> The file path can be added via the text box as well.
+            </p>
+            <p>
+                The <strong>Load File</strong> button begins reading the selected files.
+            </p>
+            <p>
+                The <strong>Save As</strong> button will save the log file in view to a new file with all the applied
+                filters and decoding.
+            </p>
+            <p>
+                The <strong>Reset</strong> button will reset the application to its initial state. Clearing all the
+                loaded files and views.
+            </p>
+
+            <h3>2. View Options</h3>
+            <p>
+                The View Options control how the application displays the loaded log data.
+            </p>
+            <p>
+                <strong>Wrap Text</strong> will wrap the text within the log view and prevent vertical scrolling.
+            </p>
+            <p>
+                <strong>Decode Hex</strong> will convert all hexadecimal characters into readable text.
+            </p>
+            <p>
+                <strong>ASCII Only</strong> is disable unless the Decode Hex option is checked. This option removes
+                non-ASCII characters from the decoded hexadecimal values.
+            </p>
+            <p>
+                The <strong>Refresh</strong> button will refresh all the views, filters, and indexes.
+            </p>
+
+            <h3>3. Data Actions</h3>
+            <p>The Data Actions are used to split and sort log files by a specific type. A dialog box will appear to select which loaded files should be processed.</p>
+            <p>
+                The <strong>Split by:</strong> button is used to split files by type into individual files.
+            </p>
+            <p>
+                The <strong>Sort by:</strong> button is used to sort files by type into one file.<br />
+                <em><strong>Note:</strong></em> this will combine the selected files into one file.
+            </p>
+            <p>
+                The dropdown in this group is used to select the <strong>type</strong>. The type is an auto generated
+                value based on specific keywords found in the log data.<br />
+                If there are no types and a file is loaded, please click the <em>Refresh</em> button and try again.
+            </p>
+            <p>
+                <strong><em>Note:</em></strong> any files created while splitting or sorting will be stored in the
+                directory of the first file selected.
+            </p>
+
+            <h3>4. Filters</h3>
+            <p>
+                Filters are generated based on keywords found in the loaded files. If filters are not generated after a file
+                is loaded, please click the <em>Refresh</em> button.
+            </p>
+            <p>
+                The filters can be adjusted in <var>%APPDATA%\CData Internal\Log
+                    Analyzer\custom_filters.json</var>
+            </p>
+            <p>
+                When adding a filter, the <strong>displayname</strong> will be the name that is displayed in the
+                application and the <strong>pattern</strong> is the keyword the application will search for in the log
+                content.
+            </p>
+            <p>
+                Filter example:
+                <var>{"filters": [{"displayname": "HTTP","pattern": "HTTP|Res"}]}</var>
+            </p>
+            <p>
+                <em><strong>Note:</strong></em> the patterns for filters read as plain text and not regular expression.
+            </p>
+            <hr>
+            <h2>Log View</h2>
+            <p>
+                When a file is loaded, it will be display in the <em>log view</em>. The log view holds a tab for each
+                loaded file and a set of navigation options for the tab currently in view.<br />
+                The navigation options are:
+            </p>
+            <ul>
+                <li>Back - Goes back one page.</li>
+                <li>Next - Goes forward one page.</li>
+                <li>Go - When used with the text box, goes to a specific page.</li>
+            </ul>
+            <br />
+            <p>
+                Other options are <strong>Search</strong> and <strong>Reload Index</strong>.
+            </p>
+            <p>The <strong>Search</strong> button, when used the the text box to its left, will search the loaded data
+                for a specific keyword</p>
+            <p>The <strong>Reload Index</strong> button is used to regenerate the current index for the file in
+                view.<br />This option should be used when there is an issue with the file's index.</p>
+            <hr>
+            <h2>Index View</h2>
+            <p>
+                The Index View is an auto generated tree of connections and notable data found in the file content.
+            </p>
+            <p>
+                Most of the items within the tree are double-clickable. When an item is double-clicked, the application
+                will jump to the line that contains the item.<br />
+                Some items are not double-clickable as they are generated by the application and do not have an actual
+                line, e.g. <em>Version Date</em>.
+            </p>
+
+            <hr>
+            <p>For any issues, questions, or feedback, please contact Quinn Freas (quinnf@cdata.com)</p>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+    <div>
+        <div id="whfooter">
+            <div class="content">
+                CData internal use only!
+                <div class="build">Jan 2026&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
