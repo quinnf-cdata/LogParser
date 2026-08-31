@@ -823,7 +823,7 @@ class LogEntry {
                         if (Utilities.isNullOrEmpty(qid) && oldLoggerParse(smallField)) { qid = Utilities.extractNumericFromString(field); }
                         if (Utilities.isNullOrEmpty(conn) && oldLoggerParse(smallField)) { conn = Utilities.extractNumericFromString(field); }
 
-                        setqId("Q-Id: " + qid);
+                        setqId("ConnectionId: " + qid);
                         setConnection("Connection: " + conn);
                     } else if (smallField.startsWith("[|Q-Id]")) {
                         setqId(field);
