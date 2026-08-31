@@ -106,7 +106,7 @@
                         <name>CData Log Analyzer</name>
                         <mainjar>LogParser-1.0-SNAPSHOT-jar-with-dependencies.jar</mainjar>
                         <mainclass>com.example.logparser.Launcher</mainclass>
-                        <input>C:\Users\QuinnFreas\IdeaProjects\LogParser\target\</input>
+                        <input>${project.build.directory}</input>
                         <type>EXE</type>
                         <winshortcut>true</winshortcut>
                         <description>CData Log Analyzer</description>
