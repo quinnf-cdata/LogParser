@@ -19,6 +19,9 @@ public class Search {
         this.searchResults.add(lineNumber);
     }
     public Integer getNext() {
+        if (cursor >= searchResults.size()) {
+            return null;
+        }
         Integer r = searchResults.get(cursor);
         cursor++;
         return r;
